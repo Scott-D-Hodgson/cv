@@ -5,9 +5,6 @@ const darkMode = useDarkMode();
 </script>
 
 <template>
-<<<<<<< Updated upstream
-    <h1>Scott D Hodgson</h1>
-=======
     <div 
         class="p-3 border rounded"
         :class="{
@@ -22,7 +19,6 @@ const darkMode = useDarkMode();
             Scott D Hodgson
         </h1>
     </div>
->>>>>>> Stashed changes
 </template>
 
 <style scoped>
