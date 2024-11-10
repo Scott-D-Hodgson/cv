@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import BrightnesToggle from './buttons/BrightnesToggle.vue';
 import DarkModeToggle from './buttons/DarkModeToggle.vue';
 
 </script>
@@ -6,7 +7,10 @@ import DarkModeToggle from './buttons/DarkModeToggle.vue';
 <template>
     <div class="row">
         <div class="col-12 text-end">
-            <DarkModeToggle></DarkModeToggle>
+            <div class="btn-group btn-group-sm">
+                <BrightnesToggle></BrightnesToggle>
+                <DarkModeToggle></DarkModeToggle>
+            </div>
         </div>
     </div>
 </template>
