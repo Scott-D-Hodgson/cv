@@ -12,7 +12,7 @@ const toggle = () => {
 
 <template>
     <button 
-        class="btn btn-sm mt-3"
+        class="btn"
         :class="text.standard()"
         :title="darkMode.isOn() ? 'Light mode' : 'Dark mode'"
         @click="toggle">

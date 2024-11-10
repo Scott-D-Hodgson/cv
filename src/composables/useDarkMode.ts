@@ -18,14 +18,14 @@ const darkMode = ref<boolean>(false);
 export function useDarkMode() {
 
     const apply = () => {
-        let elm = document.getElementsByTagName('html')[0];
-        if (!elm) {
+        let html = document.getElementsByTagName('html')[0];
+        if (!html) {
             return;
         };
         if (darkMode.value) {
-            elm.setAttribute('data-bs-theme', 'dark');
+            html.setAttribute('data-bs-theme', 'dark');
         } else {
-            elm.removeAttribute('data-bs-theme');
+            html.removeAttribute('data-bs-theme');
         };
     };
 

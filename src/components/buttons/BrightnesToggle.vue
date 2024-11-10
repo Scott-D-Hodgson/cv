@@ -12,7 +12,7 @@ const toggle = () => {
 
 <template>
     <button 
-        class="btn btn-sm mt-3"
+        class="btn"
         :class="text.standard()"
         :title="brightness.isLow() ? ' Low brightness' : 'High brightness'"
         @click="toggle">
@@ -21,7 +21,8 @@ const toggle = () => {
             :class="{
                 'fa-circle-half-stroke': brightness.isLow(),
                 'fa-circle': brightness.isHigh()
-            }"></span>
+            }">
+        </span>
     </button>
 </template>
 
