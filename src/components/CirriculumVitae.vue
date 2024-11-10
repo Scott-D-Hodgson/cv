@@ -2,6 +2,7 @@
 import { useBorder } from '../composables/useBorder';
 import FlavourText from './cv/FlavourText.vue';
 import Header from './cv/Header.vue';
+import Technologies from './cv/Technologies.vue';
 
 const border = useBorder();
 </script>
@@ -11,6 +12,7 @@ const border = useBorder();
         <Header></Header>
         <hr>
         <FlavourText></FlavourText>
+        <Technologies></Technologies>
     </div>
 </template>
 
