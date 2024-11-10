@@ -1,8 +1,10 @@
 <script setup lang="ts">
-import CirriculumVitae from './components/CirriculumVitae.vue'
+import CirriculumVitae from './components/CirriculumVitae.vue';
+import OptionSet from './components/OptionSet.vue';
 </script>
 
 <template>
+<<<<<<< Updated upstream
   <CirriculumVitae />
 </template>
 
@@ -20,3 +22,10 @@ import CirriculumVitae from './components/CirriculumVitae.vue'
   filter: drop-shadow(0 0 2em #42b883aa);
 }
 </style>
+=======
+    <OptionSet></OptionSet>
+    <CirriculumVitae></CirriculumVitae>
+</template>
+
+<style scoped></style>
+>>>>>>> Stashed changes
