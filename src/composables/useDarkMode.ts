@@ -1,4 +1,5 @@
 import { ref } from 'vue';
+import { useBrightness } from './useBrightness';
 
 const darkMode = ref<boolean>(false);
 
@@ -18,6 +19,7 @@ const darkMode = ref<boolean>(false);
 export function useDarkMode() {
 
     const apply = () => {
+        let brightnessHigh = useBrightness().isHigh();
         let elm = document.getElementsByTagName('html')[0];
         if (!elm) {
             return;
@@ -26,6 +28,15 @@ export function useDarkMode() {
             elm.setAttribute('data-bs-theme', 'dark');
         } else {
             elm.removeAttribute('data-bs-theme');
+        };
+        let body = document.getElementsByTagName('body')[0];
+        if (body) {
+            body.classList.remove(...body.classList);
+            if (darkMode.value) {
+                body.classList.add('bg-dark');
+            } else {
+                body.classList.add('bg-light-subtle');
+            };
         };
     };
 

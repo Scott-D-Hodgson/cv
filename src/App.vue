@@ -8,5 +8,4 @@ import OptionSet from './components/OptionSet.vue';
     <CirriculumVitae></CirriculumVitae>
 </template>
 
-<style scoped>
-</style>
+<style scoped></style>
