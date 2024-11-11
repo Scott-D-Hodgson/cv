@@ -14,7 +14,7 @@ import FocusItem from '../FocusItem.vue';
             { reference: 'goc', acronym: 'GoC', value: 'Government of Canada' },
             { reference: 'ircc', acronym: 'IRCC', value: 'Immigration, Refugees, and Citizenship Canada' },
             { reference: 'tdss', acronym: 'TDSS', value: 'Transformation and Digital Services Sector' },
-            { reference: 'websol', value: 'Web Solutions' }
+            { reference: 'websolutions', value: 'Web Solutions' }
         ]"
     >
         <ul>
@@ -32,7 +32,7 @@ import FocusItem from '../FocusItem.vue';
             <FocusItem :focus="['cross-functional', 'infrastructure']">
                 Engaged with the <Term reference="alm" acronym="ALM" value="Application Lifecycle Management"></Term> team
                 to design and configure <Term reference="azuredevops" value="Azure DevOps"></Term> processes and <Term 
-                reference="buildagents" value="Build Agents"></Term>, supporting streamlined workflows and integration 
+                reference="buildagent" value="Build Agents"></Term>, supporting streamlined workflows and integration 
                 within project lifecycles.
             </FocusItem>
             <FocusItem :focus="['cross-functional', 'front-end', 'back-end', 'full-stack', 'automated-testing']">
@@ -88,8 +88,8 @@ import FocusItem from '../FocusItem.vue';
                     'Active Server Pages .NET' }, { reference: 'csharp', value: 'C#' }, { reference: 'oauth', 
                     acronym: 'OAuth', value: 'Open Authentication' }, { reference: 'rest', acronym: 'REST', 
                     value: 'Representational State Transfer' }, { reference: 'mvc', acronym: 'MVC', value: 
-                    'Model-View-Controller' }, { reference: 'vite', value: 'Vite' }, { reference: 'vue', value: 
-                    'Vue' }]" separator="','" prefixFinal="'and '"></TermList> for robust development.
+                    'Model-View-Controller' }, { reference: 'vite', value: 'Vite' }, { reference: 'vuejs', value: 
+                    'Vue.js' }]" separator="','" prefixFinal="'and '"></TermList> for robust development.
             </FocusItem>
             <FocusItem :focus="['front-end', 'back-end', 'full-stack', 'mentoring']">
                 Mentored developers on technology stack, development workflows,
@@ -112,7 +112,7 @@ import FocusItem from '../FocusItem.vue';
                 Defined development best practices, implementing <Term reference="pr" acronym="PR" 
                 value="Pull Request"></Term> policies, requiring approvals, automated testing, and code quality
                 checks, in <Term reference="azuredevops" value="Azure DevOps"></Term>, and (previously) <Term
-                reference="gatedcheckin" value="gated check-ins"></Term>, in <Term reference="tfs" acronym="TFS"
+                reference="gatedcheckin" value="Gated Check-ins"></Term>, in <Term reference="tfs" acronym="TFS"
                 value="Team Foundation Server"></Term>, ensuring code stability and conflict resolution.
             </FocusItem>
             <FocusItem :focus="['front-end', 'back-end', 'full-stack', 'automated-testing', 'mentoring']">
