@@ -3,6 +3,7 @@ import { useFocus } from '../../composables/useFocus';
 import Term from '../layout/Term.vue';
 
 export interface ITerm {
+    reference: string;
     acronym?: string,
     focus?: string | string[],
     value: string
@@ -35,12 +36,14 @@ const focus = useFocus();
                 <template v-if="focus.get() !== 'all' && (term.focus !== undefined && focus.match(term.focus))">
                     <mark class="p-0">
                         <Term 
+                            :reference="term.reference"
                             :acronym="term.acronym" 
                             :value="term.value">
                         </Term>
                     </mark>
                 </template>
                 <Term v-else
+                    :reference="term.reference"
                     :acronym="term.acronym" 
                     :value="term.value">
                 </Term>

@@ -13,6 +13,7 @@
     "vue": "^3.5.10"
   },
   "devDependencies": {
+    "@types/bootstrap": "^5.2.10",
     "@vitejs/plugin-vue": "^5.1.4",
     "typescript": "^5.5.3",
     "vite": "^5.4.8",
