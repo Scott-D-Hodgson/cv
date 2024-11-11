@@ -17,7 +17,7 @@ const props = defineProps<Props>();
             <h3 class="h4 mb-0">
                 {{ props.title }}
             </h3>
-            <span class="d-none d-md-inline small">
+            <span class="d-none d-md-inline">
                 <TermList 
                     :terms="organization"
                     separator="' \\'"></TermList>
