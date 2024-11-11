@@ -2,8 +2,6 @@ import { ref } from 'vue';
 
 export interface ITerm {
     ref: string;
-    value: string;
-    acronym?: string;
     file?: string;
     content?: string;
     links?: []

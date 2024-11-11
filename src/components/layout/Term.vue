@@ -1,6 +1,8 @@
 <script setup lang="ts">
-import { ITerm, useTerms } from '../../composables/useTerms';
+import { useTerms } from '../../composables/useTerms';
 import { ref } from 'vue';
+import { marked } from 'marked';
+import dompurify from 'dompurify';
 import Modal from './Modal.vue';
 
 export interface Props {
@@ -14,12 +16,17 @@ const props = withDefaults(defineProps<Props>(), {
     isExpanded: false
 });
 const showModal = ref<boolean>(false);
-const term = ref<ITerm | null>(null);
+const content = ref<string | null>(null);
 const terms = useTerms();
 
 const show = async () => {
     if (props.reference) {
-        term.value = await terms.get(props.reference);
+        let term = await terms.get(props.reference);
+        content.value = null;
+        if (term && term.content) {
+            content.value = dompurify.sanitize(
+                await marked.parse(term.content));
+        };
     };
     showModal.value = true;
 };
@@ -35,11 +42,11 @@ const show = async () => {
                 ({{ props.acronym }})
             </template>
         </template>
-        <p v-if="term?.content" class="mb-0">{{ term?.content }}</p>
+        <p v-if="content" class="mb-0" v-html="content"></p>
         <p v-else class="mb-0">Sorry, I'm unable to load this content at the moment...</p>
     </Modal>
     <button 
-        class="p-0 text-primary border-0" 
+        class="p-0 border-0" 
         v-if="props.reference"
         @click="show">
         <abbr v-if="acronym && !isExpanded" :title="props.value">
