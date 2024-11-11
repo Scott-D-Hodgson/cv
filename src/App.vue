@@ -1,11 +1,13 @@
 <script setup lang="ts">
 import CirriculumVitae from './components/CirriculumVitae.vue';
-import OptionSet from './components/OptionSet.vue';
+import OptionsTop from './components/OptionsTop.vue';
+import OptionsBottom from './components/OptionsBottom.vue';
 </script>
 
 <template>
-    <OptionSet></OptionSet>
+    <OptionsTop></OptionsTop>
     <CirriculumVitae></CirriculumVitae>
+    <OptionsBottom></OptionsBottom>
 </template>
 
 <style scoped></style>
