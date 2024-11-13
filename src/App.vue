@@ -5,8 +5,8 @@ import OptionsBottom from './components/OptionsBottom.vue';
 </script>
 
 <template>
-    <OptionsTop></OptionsTop>
     <CirriculumVitae></CirriculumVitae>
+    <OptionsTop></OptionsTop>
     <OptionsBottom></OptionsBottom>
 </template>
 

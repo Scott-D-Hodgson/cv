@@ -1,9 +1,7 @@
 <script setup lang="ts">
 import { useFocus } from '../../composables/useFocus';
-import { useBrightness } from '../../composables/useBrightness';
 import { useDarkMode } from '../../composables/useDarkMode';
 
-const brightness = useBrightness();
 const darkMode = useDarkMode();
 const focus = useFocus();
 </script>
@@ -13,10 +11,8 @@ const focus = useFocus();
         <select 
             class="form-select border"
             :class="{
-                'bg-dark-subtle border-light-subtle': darkMode.isOn() && brightness.isLow(),
-                'bg-dark-subtle border-light': darkMode.isOn() && brightness.isHigh(),
-                'bg-light-subtle border-dark-subtle': darkMode.isOff() && brightness.isLow(),
-                'bg-light-subtle border-dark': darkMode.isOff() && brightness.isHigh()
+                'bg-dark border-light': darkMode.isOn(),
+                'bg-light border-dark': darkMode.isOff()
             }" 
             aria-label="Refine the scope of content provided"
             @change="focus.set(($event.target! as HTMLSelectElement).value)">
