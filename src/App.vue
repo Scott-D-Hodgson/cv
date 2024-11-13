@@ -10,4 +10,16 @@ import OptionsBottom from './components/OptionsBottom.vue';
     <OptionsBottom></OptionsBottom>
 </template>
 
-<style scoped></style>
+<style>
+html body {
+    background-attachment: fixed;
+}
+
+html:not([data-bs-theme='dark']) body {
+    background-image: url('/public/assets/BuffaloPlaidRed.svg');
+}
+
+html[data-bs-theme='dark'] body {
+    background-image: url('/public/assets/BuffaloPlaidGrey.svg');
+}
+</style>
