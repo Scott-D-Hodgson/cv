@@ -15,8 +15,7 @@ import FocusItem from '../FocusItem.vue';
             { reference: 'ircc', acronym: 'IRCC', value: 'Immigration, Refugees, and Citizenship Canada' },
             { reference: 'tdss', acronym: 'TDSS', value: 'Transformation and Digital Services Sector' },
             { reference: 'websolutions', value: 'Web Solutions' }
-        ]"
-    >
+        ]">
         <ul>
             <FocusItem :focus="['cross-functional', 'full-stack', 'front-end', 'back-end']">
                 Oversaw technical solutions across three distinct projects, led
