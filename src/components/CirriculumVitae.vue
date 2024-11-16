@@ -3,6 +3,7 @@ import Employment from './cv/Employment.vue';
 import FlavourText from './cv/FlavourText.vue';
 import Header from './cv/Header.vue';
 import Technologies from './cv/Technologies.vue';
+import FocusModal from './modals/FocusModal.vue';
 </script>
 
 <template>
@@ -11,6 +12,7 @@ import Technologies from './cv/Technologies.vue';
         <FlavourText></FlavourText>
         <Technologies></Technologies>
         <Employment></Employment>
+        <FocusModal></FocusModal>
     </div>
 </template>
 
