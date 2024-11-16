@@ -5,6 +5,7 @@ import DarkModeToggle from './buttons/DarkModeToggle.vue';
 import { useDarkMode } from '../composables/useDarkMode';
 import { useHandedness } from '../composables/useHandedness';
 import HandednessToggle from './buttons/HandednessToggle.vue';
+import FocusSettings from './buttons/FocusOpen.vue';
 
 const darkMode = useDarkMode();
 const handedness = useHandedness();
@@ -32,6 +33,7 @@ const handedness = useHandedness();
                     'bg-light-subtle border-dark': darkMode.isOff(),
                 }">
                     <DarkModeToggle></DarkModeToggle>
+                    <FocusSettings></FocusSettings>
                 </div>
             </div>
         </div>
@@ -53,6 +55,7 @@ const handedness = useHandedness();
                     'bg-dark-subtle border-light': darkMode.isOn(),
                     'bg-light-subtle border-dark': darkMode.isOff(),
                 }">
+                    <FocusSettings></FocusSettings>
                     <DarkModeToggle></DarkModeToggle>
                 </div>
             </div>
