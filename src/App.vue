@@ -1,13 +1,11 @@
 <script setup lang="ts">
 import CirriculumVitae from './components/CirriculumVitae.vue';
-import OptionsTop from './components/OptionsTop.vue';
 import OptionsBottom from './components/OptionsBottom.vue';
 </script>
 
 <template>
     <div class="overlay"></div>
     <CirriculumVitae></CirriculumVitae>
-    <OptionsTop></OptionsTop>
     <OptionsBottom></OptionsBottom>
 </template>
 
