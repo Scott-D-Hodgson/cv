@@ -1,12 +1,12 @@
 <script setup lang="ts">
 import { useDarkMode } from '../../composables/useDarkMode';
-import { useFocus } from '../../composables/useFocus';
+import { useFocusModal } from '../../composables/useFocusModal';
 
 const darkMode = useDarkMode();
-const focus = useFocus();
+const focusModal = useFocusModal();
 
 const open = () => {
-    focus.open();
+    focusModal.show();
 };
 </script>
 

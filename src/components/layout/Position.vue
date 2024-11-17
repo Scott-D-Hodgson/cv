@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import TermList, { ITerm } from '../layout/TermList.vue';
+import { ITerm } from '../layout/Term.vue';
+import TermList from '../layout/TermList.vue';
 
 export interface Props {
     title: string;

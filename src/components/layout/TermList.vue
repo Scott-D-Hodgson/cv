@@ -1,13 +1,6 @@
 <script setup lang="ts">
 import { useFocus } from '../../composables/useFocus';
-import Term from '../layout/Term.vue';
-
-export interface ITerm {
-    reference: string;
-    acronym?: string,
-    focus?: string | string[],
-    value: string
-}
+import Term, { ITerm } from '../layout/Term.vue';
 
 export interface Props {
     orientation?: 'horizontal' | 'vertical';
