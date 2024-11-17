@@ -1,10 +1,12 @@
 <script setup lang="ts">
 import CirriculumVitae from './components/CirriculumVitae.vue';
+import TermModal from './components/modals/TermModal.vue';
 import OptionsBottom from './components/OptionsBottom.vue';
 </script>
 
 <template>
     <div class="overlay"></div>
+    <TermModal></TermModal>
     <CirriculumVitae></CirriculumVitae>
     <OptionsBottom></OptionsBottom>
 </template>

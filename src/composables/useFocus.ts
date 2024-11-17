@@ -1,7 +1,6 @@
 import { ref } from 'vue';
 
 const focusState = ref<string>('all');
-const openState = ref<boolean>(false);
 
 export function useFocus() {
 
@@ -25,24 +24,9 @@ export function useFocus() {
         return false;
     };
 
-    const opened = (): boolean => {
-        return openState.value;
-    };
-
-    const open = (): boolean => {
-        return openState.value = true;
-    };
-
-    const close = (): boolean => {
-        return openState.value = false;
-    };
-
     return {
-        close,
         match,
         get,
-        open,
-        opened,
         set
     };
 };

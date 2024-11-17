@@ -1,21 +1,15 @@
 <script setup lang="ts">
+import { useTermModal } from '../../composables/useTermModal';
 import { getCurrentInstance, onMounted, ref } from 'vue';
-import { Modal } from 'bootstrap';
 
+const termModal = useTermModal();
 const id = ref(getCurrentInstance()?.uid);
 
-const emit = defineEmits<{
-    (e: 'closed'): void
-}>();
-
 onMounted(() => {
-    const elm = document.getElementById(`Modal${id.value}`);
-    if (elm) {
-        let modal = new Modal(elm);
-        elm?.addEventListener('hidden.bs.modal', () => {
-            emit('closed');
-        });
-        modal.show();
+    let selector = `Modal${id.value}`;
+    const uiModal = document.getElementById(selector);
+    if (uiModal) {
+        termModal.bind(uiModal);
     };
 });
 </script>
@@ -26,12 +20,15 @@ onMounted(() => {
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title">
-                        <slot name="title"></slot>
+                        {{ termModal.term.value?.value }}
+                        <template v-if="termModal.term.value?.acronym">
+                            ({{ termModal.term.value?.acronym }})
+                        </template>
                     </h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <slot></slot>
+                    <p v-if="termModal.term?.value?.content" class="mb-0" v-html="termModal.term.value.content"></p>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
