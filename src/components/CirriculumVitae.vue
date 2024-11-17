@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import Education from './cv/Education.vue';
 import Employment from './cv/Employment.vue';
 import FlavourText from './cv/FlavourText.vue';
 import Header from './cv/Header.vue';
@@ -12,6 +13,7 @@ import FocusModal from './modals/FocusModal.vue';
         <FlavourText></FlavourText>
         <Technologies></Technologies>
         <Employment></Employment>
+        <Education></Education>
         <FocusModal></FocusModal>
     </div>
 </template>
