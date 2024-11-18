@@ -4,7 +4,7 @@ import AlgonquinCollege from './education/AlgonquinCollege.vue';
 </script>
 
 <template>
-    <Section heading="Education">
+    <Section heading="Education" label="Scroll to education" icon="fa-graduation-cap">
         <AlgonquinCollege></AlgonquinCollege>
     </Section>
 </template>
