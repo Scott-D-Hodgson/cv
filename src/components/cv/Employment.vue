@@ -6,7 +6,7 @@ import TechnicalLead from './employment/TechnicalLead.vue';
 </script>
 
 <template>
-    <Section heading="Employment">
+    <Section heading="Employment" label="Scroll to employment" icon="fa-id-badge">
         <TechnicalLead></TechnicalLead>
         <SeniorDeveloper></SeniorDeveloper>
         <SeniorProgrammerAnalyst></SeniorProgrammerAnalyst>
