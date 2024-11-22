@@ -20,8 +20,8 @@ const toggle = () => {
         :title="handedness.isLeft() ? 'Left-handed' : 'Right-handed'"
         @click="toggle">
         <span class="fad fa-fw" :class="{
-            'fa-hand': handedness.isLeft(),
-            'fa-hand fa-flip-horizontal': handedness.isRight()
+            'fa-hand fa-flip-horizontal': handedness.isLeft(),
+            'fa-hand': handedness.isRight()
         }"></span>
     </button>
 </template>
