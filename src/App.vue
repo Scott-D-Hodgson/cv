@@ -4,8 +4,10 @@ import FocusModal from './components/modals/FocusModal.vue';
 import TermModal from './components/modals/TermModal.vue';
 import PositionOptions from './components/PositionOptions.vue';
 import { useHandedness } from './composables/useHandedness';
+import { useDarkMode } from './composables/useDarkMode';
 
 const handedness = useHandedness();
+const darkMode = useDarkMode();
 </script>
 
 <template>
@@ -18,8 +20,14 @@ const handedness = useHandedness();
                 <PositionOptions></PositionOptions>
             </div>
         </div>
-        <div class="flex-grow-11 pt-3 pb-3">
-            <CirriculumVitae></CirriculumVitae>
+        <div class="flex-grow-11 pt-3 pb-3">            
+            <div class="p-2 border rounded" 
+                :class="{
+                    'bg-dark border-light text-light': darkMode.isOn(),
+                    'bg-light border-dark text-dark': darkMode.isOff(),
+                }">
+                <CirriculumVitae></CirriculumVitae>
+            </div>
         </div>
         <div v-if="handedness.isRight()" class="flex-grow-1 ms-3">
             <div class="sticky-top pt-3">

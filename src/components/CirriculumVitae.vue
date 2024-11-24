@@ -8,10 +8,14 @@ import Technologies from './cv/Technologies.vue';
 
 <template>
     <Header></Header>
+    <hr/>
     <FlavourText></FlavourText>
+    <hr/>
     <Technologies></Technologies>
+    <hr/>
     <Employment></Employment>
     <Education></Education>
 </template>
 
-<style scoped></style>
+<style scoped>
+</style>
