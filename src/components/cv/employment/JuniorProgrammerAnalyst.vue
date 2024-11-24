@@ -4,6 +4,7 @@ import Position from '../../layout/Position.vue';
 
 <template>
     <Position 
+        id="JuniorProgrammerAnalyst"
         title="Junior Programmer/Analyst"
         from="Jan. 2002"
         to="Dec. 2005"

@@ -1,8 +1,13 @@
 <script setup lang="ts">
+export interface Props {
+    id: string;
+};
+
+const props = defineProps<Props>();
 </script>
 
 <template>
-    <div class="row">
+    <div :id="props.id" class="row">
         <div class="col-12 col-md-8">
             <h3 class="h4 mb-0">
                 <slot name="provider"></slot>

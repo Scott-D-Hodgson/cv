@@ -4,7 +4,7 @@ import TermList from '../layout/TermList.vue';
 </script>
 
 <template>
-    <Section label="Scroll to technologies" icon="fa-code">
+    <Section id="TechnologiesSection" label="Scroll to technologies" icon="fa-code">
         <TermList separator="' | '" :terms="[
             { reference: 'dotnet', value: '.NET', focus: ['back-end', 'full-stack'] },
             { reference: 'agile', value: 'Agile', focus: ['cross-functional'] },

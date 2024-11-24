@@ -2,13 +2,71 @@
 import ScrollToTop from './buttons/ScrollToTop.vue';
 import ScrollToBottom from './buttons/ScrollToBottom.vue';
 import { useDarkMode } from '../composables/useDarkMode';
-import { useSections } from '../composables/useSections';
 import HandednessToggle from './buttons/HandednessToggle.vue';
 import DarkModeToggle from './buttons/DarkModeToggle.vue';
 import FocusOpen from './buttons/FocusOpen.vue';
+import { computed, ref } from 'vue';
 
 const darkMode = useDarkMode();
-const sections = useSections();
+const expanded = ref<'employment' | 'education' | 'projects' | null>(null);
+
+const buttonClick = (action: string) => {
+    expanded.value = null;
+    switch (action) {
+        case 'FlavorText':
+            scroll('#FlavourTextSection');
+            break;
+        case 'Technologies':
+            scroll('#TechnologiesSection');
+            break;
+        case 'Employment':
+            scroll('#EmploymentSection');
+            expanded.value = 'employment';
+            break;
+        case 'TechnicalLead':
+            scroll('#TechnicalLead');
+            expanded.value = 'employment';
+            break;
+        case 'SeniorDeveloper':
+            scroll('#SeniorDeveloper');
+            expanded.value = 'employment';
+            break;
+        case 'SeniorProgrammerAnalyst':
+            scroll('#SeniorProgrammerAnalyst');
+            expanded.value = 'employment';
+            break; 
+        case 'Education':
+            scroll('#EducationSection');
+            expanded.value = 'education';
+            break;
+        case 'AlgonquinCollege':
+            scroll('#AlgonquinCollege');
+            expanded.value = 'education';
+            break; 
+        case 'LearningTree':
+            scroll('#LearningTree');
+            expanded.value = 'education';
+            break; 
+        case 'GlobalKnowledge':
+            scroll('#GlobalKnowledge');
+            expanded.value = 'education';
+            break; 
+    };
+};
+
+const classes = computed(() => {
+    return darkMode.isOn() ? 
+        'bg-dark-subtle border-light' :
+        'bg-light-subtle border-dark'
+    }
+);
+
+const subclasses = computed(() => {
+    return darkMode.isOn() ? 
+        'bg-dark' :
+        'bg-light'
+    }
+);
 
 const scroll = (selector: string) => {
     console.log(selector);
@@ -22,29 +80,44 @@ const scroll = (selector: string) => {
 </script>
 
 <template>
-    <div class="btn-group-vertical border rounded mb-2"
-        :class="{
-        'bg-dark-subtle border-light': darkMode.isOn(),
-        'bg-light-subtle border-dark': darkMode.isOff(),
-    }">
+    <div class="btn-group-vertical border rounded mb-2" :class="classes">
         <DarkModeToggle></DarkModeToggle>
         <HandednessToggle></HandednessToggle>
     </div>
-    <div class="btn-group-vertical border rounded mb-2"
-        :class="{
-        'bg-dark-subtle border-light': darkMode.isOn(),
-        'bg-light-subtle border-dark': darkMode.isOff(),
-    }">
+    <div class="btn-group-vertical border rounded mb-2" :class="classes">
         <FocusOpen></FocusOpen>
     </div>
-    <div class="btn-group-vertical border rounded mb-2"
-        :class="{
-        'bg-dark-subtle border-light': darkMode.isOn(),
-        'bg-light-subtle border-dark': darkMode.isOff(),
-    }">
+    <div class="btn-group-vertical border rounded mb-2" :class="classes">
         <ScrollToTop></ScrollToTop>
-        <button v-for="section in sections.get.value" class="btn" :title="section.label" @click="scroll(section.selector)">
-            <span class="fad fa-fw" :class="section.icon"></span>
+        <button class="btn" title="Scroll to quotation" @click="buttonClick('FlavourText')">
+            <span class="fad fa-fw fa-quotes" :class="classes"></span>
+        </button>
+        <button class="btn" title="Scroll to technologies" @click="buttonClick('Technologies')">
+            <span class="fad fa-fw fa-code" :class="classes"></span>
+        </button>
+        <button class="btn" title="Scroll to employment" @click="buttonClick('Employment')">
+            <span class="fad fa-fw fa-id-badge" :class="classes"></span>
+        </button>
+        <button v-if="expanded === 'employment'" class="btn btn-sm" :class="subclasses" title="Scroll to Technical Lead" @click="buttonClick('TechnicalLead')">
+            <span class="fad fa-1"></span>
+        </button>
+        <button v-if="expanded === 'employment'" class="btn btn-sm" :class="subclasses" title="Scroll to Senior Developer" @click="buttonClick('SeniorDeveloper')">
+            <span class="fad fa-2"></span>
+        </button>
+        <button v-if="expanded === 'employment'" class="btn btn-sm" :class="subclasses" title="Scroll to Senior Programmer Analyst" @click="buttonClick('SeniorProgrammerAnalyst')">
+            <span class="fad fa-3"></span>
+        </button>
+        <button class="btn" title="Scroll to education" @click="buttonClick('Education')">
+            <span class="fad fa-fw fa-graduation-cap" :class="classes"></span>
+        </button>
+        <button v-if="expanded === 'education'" class="btn btn-sm" :class="subclasses" title="Scroll to Algonquin College" @click="buttonClick('AlgonquinCollege')">
+            <span class="fad fa-1"></span>
+        </button>
+        <button v-if="expanded === 'education'" class="btn btn-sm" :class="subclasses" title="Scroll to Learning Tree" @click="buttonClick('LearningTree')">
+            <span class="fad fa-2"></span>
+        </button>
+        <button v-if="expanded === 'education'" class="btn btn-sm" :class="subclasses" title="Scroll to Global Knowledge" @click="buttonClick('GlobalKnowledge')">
+            <span class="fad fa-3"></span>
         </button>
         <ScrollToBottom></ScrollToBottom>
     </div>

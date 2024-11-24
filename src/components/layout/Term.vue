@@ -60,5 +60,6 @@ const show = () => {
 <style scoped>
 button {
     background-color: inherit;
+    display: contents;
 }
 </style>

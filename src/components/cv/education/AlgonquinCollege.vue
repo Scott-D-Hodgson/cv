@@ -3,7 +3,7 @@ import Trainer from '../../layout/Trainer.vue';
 </script>
 
 <template>
-    <Trainer>
+    <Trainer id="AlgonquinCollege">
         <template v-slot:provider>Algonquin College</template>
         <template v-slot:range>2000 - 2001</template>
         <p>

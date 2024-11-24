@@ -13,16 +13,16 @@ const handedness = useHandedness();
     <TermModal></TermModal>
     <FocusModal></FocusModal>
     <div class="flex-container">
-        <div v-if="handedness.isLeft()" class="flex-grow-1 me-2">
-            <div class="sticky-top">
+        <div v-if="handedness.isLeft()" class="flex-grow-1 me-3">
+            <div class="sticky-top pt-3">
                 <PositionOptions></PositionOptions>
             </div>
         </div>
-        <div class="flex-grow-11">
+        <div class="flex-grow-11 pt-3 pb-3">
             <CirriculumVitae></CirriculumVitae>
         </div>
-        <div v-if="handedness.isRight()" class="flex-grow-1 ms-2">
-            <div class="sticky-top">
+        <div v-if="handedness.isRight()" class="flex-grow-1 ms-3">
+            <div class="sticky-top pt-3">
                 <PositionOptions></PositionOptions>
             </div>
         </div>
