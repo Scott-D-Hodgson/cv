@@ -3,6 +3,7 @@ import { ITerm } from '../layout/Term.vue';
 import TermList from '../layout/TermList.vue';
 
 export interface Props {
+    id: string;
     title: string;
     from: string;
     to: string;
@@ -13,7 +14,7 @@ const props = defineProps<Props>();
 </script>
 
 <template> 
-    <div class="row">
+    <div :id="props.id" class="row">
         <div class="col-12 col-md-8">
             <h3 class="h4 mb-0">
                 {{ props.title }}
@@ -38,4 +39,7 @@ const props = defineProps<Props>();
 </template>
 
 <style scoped>
+div[id] {
+    scroll-margin-top: 5rem;
+}
 </style>

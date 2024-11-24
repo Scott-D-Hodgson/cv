@@ -6,6 +6,7 @@ import FocusItem from '../FocusItem.vue';
 
 <template>
     <Position 
+        id="SeniorDeveloper"
         title="Senior Developer" 
         from="Feb. 2010" 
         to="Mar. 2014"

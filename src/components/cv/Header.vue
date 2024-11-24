@@ -6,7 +6,7 @@ const darkMode = useDarkMode();
 
 <template>
     <div class="sticky-top">
-        <div class="p-2 border rounded-bottom" :class="{
+        <div class="p-2 border rounded" :class="{
             'bg-dark border-light': darkMode.isOn(),
             'bg-light border-dark': darkMode.isOff(),
         }">

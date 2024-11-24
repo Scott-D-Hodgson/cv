@@ -5,12 +5,17 @@ import FocusItem from '../../cv/FocusItem.vue';
 </script>
 
 <template>
-    <Position title="Senior Programmer/Analyst" from="Dec. 2005" to="Feb. 2010" :organization="[
-        { reference: 'goc', acronym: 'GoC', value: 'Government of Canada' },
-        { reference: 'cic', acronym: 'CIC', value: 'Citizenship and Immigration Canada' },
-        { reference: 'imtb', acronym: 'IMTB', value: 'Information Management and Technologies Branch' },
-        { reference: 'corporatesystems', value: 'Corporate Systems' }
-    ]">
+    <Position 
+        id="SeniorProgrammerAnalyst" 
+        title="Senior Programmer/Analyst" 
+        from="Dec. 2005" 
+        to="Feb. 2010" 
+        :organization="[
+            { reference: 'goc', acronym: 'GoC', value: 'Government of Canada' },
+            { reference: 'cic', acronym: 'CIC', value: 'Citizenship and Immigration Canada' },
+            { reference: 'imtb', acronym: 'IMTB', value: 'Information Management and Technologies Branch' },
+            { reference: 'corporatesystems', value: 'Corporate Systems' }
+        ]">
         <ul>
             <FocusItem>Conceptualized and implemented a modular reporting system leveraging <Term 
                 reference="crystalreports" value="Crystal Reports"></Term>, decoupling report processing from 
