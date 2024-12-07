@@ -19,8 +19,4 @@ const props = defineProps<Props>();
     </div>
 </template>
 
-<style scoped>
-div[id] {
-    scroll-margin-top: 5rem;
-}
-</style>
+<style scoped></style>

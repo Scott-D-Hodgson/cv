@@ -59,6 +59,10 @@ const buttonClick = (action: string) => {
             scroll('#iCareModernization');
             expanded.value = 'systems';
             break; 
+        case 'eGemOriginal':
+            scroll('#eGemOriginal');
+            expanded.value = 'systems';
+            break; 
         case 'iCareOriginal':
             scroll('#iCareOriginal');
             expanded.value = 'systems';
@@ -137,8 +141,11 @@ const scroll = (selector: string) => {
         <button v-if="expanded === 'systems'" class="btn btn-sm" :class="subclasses" title="Scroll to iCARE (Modernized)" @click="buttonClick('iCareModernized')">
             <span class="fad fa-1"></span>
         </button>
-        <button v-if="expanded === 'systems'" class="btn btn-sm" :class="subclasses" title="Scroll to iCARE (Original)" @click="buttonClick('iCareOriginal')">
+        <button v-if="expanded === 'systems'" class="btn btn-sm" :class="subclasses" title="Scroll to eGEM" @click="buttonClick('eGemOriginal')">
             <span class="fad fa-2"></span>
+        </button>
+        <button v-if="expanded === 'systems'" class="btn btn-sm" :class="subclasses" title="Scroll to iCARE (Original)" @click="buttonClick('iCareOriginal')">
+            <span class="fad fa-3"></span>
         </button>
         <ScrollToBottom></ScrollToBottom>
     </div>
