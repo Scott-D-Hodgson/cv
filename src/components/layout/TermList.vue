@@ -21,10 +21,10 @@ const show = (termFocus?: string | string[]) => {
     if (!props.focusSuppress) {
         return true;
     };
+    if (focus.get() === 'all') {
+        return true;
+    };
     if (termFocus === undefined) {
-        if (focus.get() === 'all') {
-            return true;
-        };
         return false;
     };
     if (typeof termFocus === 'string' && termFocus.trim().toLowerCase() === focus.get()) {
