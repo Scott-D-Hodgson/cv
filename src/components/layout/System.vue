@@ -39,7 +39,7 @@ const props = defineProps<Props>();
             [ <strong class="sr-only">Technologies:</strong> <TermList :terms="props.technologies" separator="' |'" /> ]
         </div>
     </div>
-    <div class="row mb-3">
+    <div class="row">
         <div class="col-12">
             <p class="m-0">
                 <slot></slot>
@@ -48,8 +48,4 @@ const props = defineProps<Props>();
     </div>
 </template>
 
-<style scoped>
-div[id] {
-    scroll-margin-top: 5rem;
-}
-</style>
+<style scoped></style>
