@@ -10,10 +10,10 @@ const props = defineProps<Props>();
 const focus = useFocus();
 
 const shown = ref(computed(() => {
+    if (focus.get() === 'all') {
+        return true;
+    };
     if (props.focus === undefined) {
-        if (focus.get() === 'all') {
-            return true;
-        };
         return false;
     };
     if (typeof props.focus === 'string' && props.focus.trim().toLowerCase() === focus.get()) {
