@@ -2,6 +2,7 @@
 export interface Props {
     id: string;
     heading?: string;
+    icon?: string;
 }
 
 const props = defineProps<Props>();
@@ -11,7 +12,7 @@ const props = defineProps<Props>();
     <div :id="props.id" class="row mt-3">
         <div class="col">
             <template v-if="props.heading">
-                <h2>{{ heading }}</h2>
+                <h2>{{ heading }}<span v-if="props.icon" class="text-muted small ms-2 fad" :class="`${props.icon}`"></span></h2>
             </template>
             <slot></slot>
         </div>

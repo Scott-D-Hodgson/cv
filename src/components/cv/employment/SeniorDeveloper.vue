@@ -1,7 +1,8 @@
 <script setup lang="ts">
 import Position from '../../layout/Position.vue';
 import Term from '../../layout/Term.vue';
-import FocusItem from '../FocusItem.vue';
+import FocusItem from '../../layout/FocusItem.vue';
+import FocusList from '../../layout/FocusList.vue';
 </script>
 
 <template>
@@ -16,7 +17,7 @@ import FocusItem from '../FocusItem.vue';
             { reference: 'simb', acronym: 'SIMB', value: 'Solutions Information Management Branch' },
             { reference: 'gsandcs', acronym: `G's and C's`, value: 'Grants and Contributions' }
         ]">
-        <ul>
+        <FocusList>
             <FocusItem :focus="['full-stack', 'front-end', 'back-end']">
                 Established core development tools, including <Term reference="vs" acronym="VS" 
                 value="Visual Studio"></Term> and <Term reference="tfs" acronym="TFS" 
@@ -137,8 +138,7 @@ import FocusItem from '../FocusItem.vue';
                 Provided database architecture guidance, designing <Term reference="erd" acronym="ERDs" 
                 value="Entity-Relationship Diagrams"></Term> to support data consistency and scalability.
             </FocusItem>
-        </ul>
-
+        </FocusList>
     </Position>
 </template>
 

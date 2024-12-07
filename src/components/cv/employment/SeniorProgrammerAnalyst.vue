@@ -1,7 +1,8 @@
 <script setup lang="ts">
 import Position from '../../layout/Position.vue';
 import Term from '../../layout/Term.vue';
-import FocusItem from '../../cv/FocusItem.vue';
+import FocusItem from '../../layout/FocusItem.vue';
+import FocusList from '../../layout/FocusList.vue';
 </script>
 
 <template>
@@ -16,7 +17,7 @@ import FocusItem from '../../cv/FocusItem.vue';
             { reference: 'imtb', acronym: 'IMTB', value: 'Information Management and Technologies Branch' },
             { reference: 'corporatesystems', value: 'Corporate Systems' }
         ]">
-        <ul>
+        <FocusList>
             <FocusItem>Conceptualized and implemented a modular reporting system leveraging <Term 
                 reference="crystalreports" value="Crystal Reports"></Term>, decoupling report processing from 
                 applications, and delivering the <Term reference="s3-rs" acronym="S3-RS" 
@@ -50,7 +51,7 @@ import FocusItem from '../../cv/FocusItem.vue';
                 effectively.</FocusItem>
             <FocusItem>Designed a modular database structure to support application development, enabling component
                 reuse and earning the GTEC Bronze Award for innovation and efficiency.</FocusItem>
-        </ul>
+        </FocusList>
     </Position>
 </template>
 

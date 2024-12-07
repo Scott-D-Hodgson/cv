@@ -3,7 +3,7 @@ import Section from '../layout/Section.vue';
 </script>
 
 <template>
-    <Section id="FlavourTextSection" label="Scroll to quotation" icon="fa-quotes">
+    <Section id="FlavourTextSection">
         <blockquote class="blockquote m-0 p-2">
             <p class="small">Solution-driven, systems integrater, and passioned code-auther on the clock.
                 Smart home dabler, gadget enthusiast, international student host, nature hiker, occasional gamer,
