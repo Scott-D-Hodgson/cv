@@ -8,7 +8,7 @@ import FocusOpen from './buttons/FocusOpen.vue';
 import { computed, ref } from 'vue';
 
 const darkMode = useDarkMode();
-const expanded = ref<'employment' | 'education' | 'projects' | null>(null);
+const expanded = ref<'employment' | 'education' | 'systems' | null>(null);
 
 const buttonClick = (action: string) => {
     expanded.value = null;
@@ -50,6 +50,18 @@ const buttonClick = (action: string) => {
         case 'GlobalKnowledge':
             scroll('#GlobalKnowledge');
             expanded.value = 'education';
+            break; 
+        case 'Systems':
+            scroll('#SystemsSection');
+            expanded.value = 'systems';
+            break;
+        case 'iCareModernized':
+            scroll('#iCareModernization');
+            expanded.value = 'systems';
+            break; 
+        case 'iCareOriginal':
+            scroll('#iCareOriginal');
+            expanded.value = 'systems';
             break; 
     };
 };
@@ -118,6 +130,15 @@ const scroll = (selector: string) => {
         </button>
         <button v-if="expanded === 'education'" class="btn btn-sm" :class="subclasses" title="Scroll to Global Knowledge" @click="buttonClick('GlobalKnowledge')">
             <span class="fad fa-3"></span>
+        </button>
+        <button class="btn" title="Scroll to systems" @click="buttonClick('Systems')">
+            <span class="fad fa-fw fa-computer" :class="classes"></span>
+        </button>
+        <button v-if="expanded === 'systems'" class="btn btn-sm" :class="subclasses" title="Scroll to iCARE (Modernized)" @click="buttonClick('iCareModernized')">
+            <span class="fad fa-1"></span>
+        </button>
+        <button v-if="expanded === 'systems'" class="btn btn-sm" :class="subclasses" title="Scroll to iCARE (Original)" @click="buttonClick('iCareOriginal')">
+            <span class="fad fa-2"></span>
         </button>
         <ScrollToBottom></ScrollToBottom>
     </div>

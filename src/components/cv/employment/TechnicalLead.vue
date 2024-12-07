@@ -2,7 +2,8 @@
 import Position from '../../layout/Position.vue';
 import Term from '../../layout/Term.vue';
 import TermList from '../../layout/TermList.vue';
-import FocusItem from '../FocusItem.vue';
+import FocusItem from '../../layout/FocusItem.vue';
+import FocusList from '../../layout/FocusList.vue';
 </script>
 
 <template>
@@ -17,7 +18,7 @@ import FocusItem from '../FocusItem.vue';
             { reference: 'tdss', acronym: 'TDSS', value: 'Transformation and Digital Services Sector' },
             { reference: 'websolutions', value: 'Web Solutions' }
         ]">
-        <ul>
+        <FocusList>
             <FocusItem :focus="['cross-functional', 'full-stack', 'front-end', 'back-end']">
                 Oversaw technical solutions across three distinct projects, led
                 by different <Term reference="tl" acronym="TLs" value="Team Leads"></Term>, providing strategic guidance
@@ -128,7 +129,7 @@ import FocusItem from '../FocusItem.vue';
                 Configured and maintained <Term reference="npe" acronym="NPE" value="Non-Production Environment">                    
                 </Term> infrastructure, supporting both system hosting and build server operations.
             </FocusItem>
-        </ul>
+        </FocusList>
     </Position>
 </template>
 

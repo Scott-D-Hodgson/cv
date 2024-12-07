@@ -6,7 +6,7 @@ import LearningTree from './education/LearningTree.vue';
 </script>
 
 <template>
-    <Section id="EducationSection" heading="Education" label="Scroll to education" icon="fa-graduation-cap">
+    <Section id="EducationSection" heading="Education" icon="fa-graduation-cap">
         <AlgonquinCollege></AlgonquinCollege>
         <LearningTree></LearningTree>
         <GlobalKnowledge></GlobalKnowledge>
