@@ -1,29 +1,39 @@
 <script setup lang="ts">
-import { useDarkMode } from '../../composables/useDarkMode';
 import { useFocus } from '../../composables/useFocus';
 import Term, { ITerm } from '../layout/Term.vue';
-import { computed, ref } from 'vue';
 
 export interface Props {
     orientation?: 'horizontal' | 'vertical';
     separator?: string;
     prefixFinal?: string;
     terms: ITerm[];
-}
+    focusSuppress?: boolean;
+};
 
 const props = withDefaults(defineProps<Props>(), {
     orientation: 'horizontal',
-    separator: `' '`
+    separator: `' '`,
+    focusSuppress: false
 });
-const darkMode = useDarkMode();
 const focus = useFocus();
 
-const markHighlight = ref(computed(() => {
-    if (focus.get() !== 'all') {
-        return darkMode.isOn() ? 'rgba(255, 255, 0, 0.2)' : 'rgba(255, 255, 0, 0.2)';
+const show = (termFocus?: string | string[]) => {
+    if (!props.focusSuppress) {
+        return true;
     };
-    return 'inherit';
-}));
+    if (termFocus === undefined) {
+        if (focus.get() === 'all') {
+            return true;
+        };
+        return false;
+    };
+    if (typeof termFocus === 'string' && termFocus.trim().toLowerCase() === focus.get()) {
+        return true;
+    } else if (termFocus.includes(focus.get())) {
+        return true;
+    };
+    return false;
+};
 </script>
 
 <template>
@@ -32,20 +42,11 @@ const markHighlight = ref(computed(() => {
         'list': orientation === 'vertical'
     }">
         <template v-for="term in props.terms"> 
-            <li :class="{
+            <li v-if="show(term.focus)" :class="{
                     'list-inline-item': orientation === 'horizontal',
                     'list-item': orientation === 'vertical'
                 }">
-                <template v-if="focus.get() !== 'all' && (term.focus !== undefined && focus.match(term.focus))">
-                    <mark class="p-0">
-                        <Term 
-                            :reference="term.reference"
-                            :acronym="term.acronym" 
-                            :value="term.value">
-                        </Term>
-                    </mark>
-                </template>
-                <Term v-else
+                <Term
                     :reference="term.reference"
                     :acronym="term.acronym" 
                     :value="term.value">
@@ -66,10 +67,5 @@ li:not(:last-child)::after {
 
 li:last-child::before {
     content: v-bind(prefixFinal)
-}
-
-mark {
-    padding: 0;
-    background-color: v-bind('markHighlight');
 }
 </style>

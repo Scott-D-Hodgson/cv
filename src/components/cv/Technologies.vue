@@ -5,7 +5,7 @@ import TermList from '../layout/TermList.vue';
 
 <template>
     <Section id="TechnologiesSection" icon="fa-code">
-        <TermList separator="' | '" :terms="[
+        <TermList :focusSuppress="true" separator="' | '" :terms="[
             { reference: 'dotnet', value: '.NET', focus: ['back-end', 'full-stack'] },
             { reference: 'agile', value: 'Agile', focus: ['cross-functional'] },
             { reference: 'ajax', acronym: 'AJAX', value: 'Asynchronous JavaScript and XML', focus: ['front-end', 'full-stack'] },
