@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { useFocus } from '../../composables/useFocus';
 import { useDarkMode } from '../../composables/useDarkMode';
-import { onMounted, ref, watch } from 'vue';
+import { computed, ref } from 'vue';
 
 export interface Props {
     focus?: string | string[];
@@ -11,15 +11,19 @@ const props = defineProps<Props>();
 const darkMode = useDarkMode();
 const focus = useFocus();
 
-const oddHighlight = ref<string>('inherit');
+const oddHighlight = ref(computed(() => {
+    if (focus.get() === 'all') {
+        return darkMode.isOn() ? 'rgba(128, 128, 128, 0.2)' : 'rgba(220, 20, 60, 0.1)';
+    };
+    return 'inherit';
+}));
 
-watch(darkMode.isOn, async() => {
-    oddHighlight.value = darkMode.isOn() ? 'rgba(128, 128, 128, 0.2)' : 'rgba(220, 20, 60, 0.1)';
-});
-
-onMounted(() => {
-    oddHighlight.value = darkMode.isOn() ? 'rgba(128, 128, 128, 0.2)' : 'rgba(220, 20, 60, 0.1)';
-});
+const markHighlight = ref(computed(() => {
+    if (focus.get() !== 'all') {
+        return darkMode.isOn() ? 'rgba(255, 255, 0, 0.2)' : 'rgba(255, 255, 0, 0.2)';
+    };
+    return 'inherit';
+}));
 </script>
 
 <template>
@@ -27,7 +31,7 @@ onMounted(() => {
         'marked': focus.get() !== 'all' && props.focus !== undefined && props.focus.includes(focus.get())
     }">
         <template v-if="focus.get() !== 'all' && props.focus !== undefined && props.focus.includes(focus.get())">
-            <mark class="p-0">
+            <mark>
                 <slot></slot>
             </mark>
         </template>
@@ -41,10 +45,11 @@ li:nth-child(odd) {
 }
 
 .marked {
-    background-color: rgba(128, 128, 128, 0.1);
+    background-color: v-bind('markHighlight');
 }
 
 mark {
-    background-color: inherit;
+    padding: 0;
+    background: none;
 }
 </style>

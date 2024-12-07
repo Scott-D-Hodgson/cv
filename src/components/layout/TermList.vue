@@ -1,6 +1,8 @@
 <script setup lang="ts">
+import { useDarkMode } from '../../composables/useDarkMode';
 import { useFocus } from '../../composables/useFocus';
 import Term, { ITerm } from '../layout/Term.vue';
+import { computed, ref } from 'vue';
 
 export interface Props {
     orientation?: 'horizontal' | 'vertical';
@@ -13,7 +15,15 @@ const props = withDefaults(defineProps<Props>(), {
     orientation: 'horizontal',
     separator: `' '`
 });
+const darkMode = useDarkMode();
 const focus = useFocus();
+
+const markHighlight = ref(computed(() => {
+    if (focus.get() !== 'all') {
+        return darkMode.isOn() ? 'rgba(255, 255, 0, 0.2)' : 'rgba(255, 255, 0, 0.2)';
+    };
+    return 'inherit';
+}));
 </script>
 
 <template>
@@ -56,5 +66,10 @@ li:not(:last-child)::after {
 
 li:last-child::before {
     content: v-bind(prefixFinal)
+}
+
+mark {
+    padding: 0;
+    background-color: v-bind('markHighlight');
 }
 </style>
