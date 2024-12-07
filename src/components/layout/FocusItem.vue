@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { useFocus } from '../../composables/useFocus';
-import { useDarkMode } from '../../composables/useDarkMode';
 import { computed, ref } from 'vue';
 
 export interface Props {
@@ -8,48 +7,28 @@ export interface Props {
 };
 
 const props = defineProps<Props>();
-const darkMode = useDarkMode();
 const focus = useFocus();
 
-const oddHighlight = ref(computed(() => {
-    if (focus.get() === 'all') {
-        return darkMode.isOn() ? 'rgba(128, 128, 128, 0.2)' : 'rgba(220, 20, 60, 0.1)';
+const shown = ref(computed(() => {
+    if (props.focus === undefined) {
+        if (focus.get() === 'all') {
+            return true;
+        };
+        return false;
     };
-    return 'inherit';
-}));
-
-const markHighlight = ref(computed(() => {
-    if (focus.get() !== 'all') {
-        return darkMode.isOn() ? 'rgba(255, 255, 0, 0.2)' : 'rgba(255, 255, 0, 0.2)';
+    if (typeof props.focus === 'string' && props.focus.trim().toLowerCase() === focus.get()) {
+        return true;
+    } else if (props.focus.includes(focus.get())) {
+        return true;
     };
-    return 'inherit';
+    return false;
 }));
 </script>
 
 <template>
-    <li class="ps-2 pe-2 pt-1 pb-1 rounded" :class="{
-        'marked': focus.get() !== 'all' && props.focus !== undefined && props.focus.includes(focus.get())
-    }">
-        <template v-if="focus.get() !== 'all' && props.focus !== undefined && props.focus.includes(focus.get())">
-            <mark>
-                <slot></slot>
-            </mark>
-        </template>
-        <slot v-else></slot>
+    <li v-if="shown" class="ps-2 pe-2 pt-1 pb-1 rounded">
+        <slot></slot>
     </li>
 </template>
 
-<style scoped>
-li:nth-child(odd) {
-    background-color: v-bind('oddHighlight');
-}
-
-.marked {
-    background-color: v-bind('markHighlight');
-}
-
-mark {
-    padding: 0;
-    background: none;
-}
-</style>
+<style scoped></style>

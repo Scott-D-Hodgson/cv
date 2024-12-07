@@ -3,6 +3,7 @@ import FocusList from '../../layout/FocusList.vue';
 import FocusItem from '../../layout/FocusItem.vue';
 import System from '../../layout/System.vue';
 import TermList from '../../layout/TermList.vue';
+import Term from '../../layout/Term.vue';
 </script>
 
 <template>
