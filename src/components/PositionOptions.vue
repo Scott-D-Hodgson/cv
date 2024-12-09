@@ -7,8 +7,51 @@ import DarkModeToggle from './buttons/DarkModeToggle.vue';
 import FocusOpen from './buttons/FocusOpen.vue';
 import { computed, ref } from 'vue';
 
+interface iSystems {
+    id: string,
+    title: string
+}
+
 const darkMode = useDarkMode();
 const expanded = ref<'employment' | 'education' | 'systems' | null>(null);
+const systems: iSystems[] = [
+    {
+        id: 'iCareModernization',
+        title: 'Scroll to iCARE (Modernization)'
+    },
+    {
+        id: 'InternetApps',
+        title: 'Scroll to Internet Apps'
+    },
+    {
+        id: 'IntranetApps',
+        title: 'Scroll to Intranet Apps'
+    },
+    {
+        id: 'eGem',
+        title: 'Scroll to eGEM'
+    },
+    {
+        id: 'ConnexionApps',
+        title: 'Scroll to Connexion Apps'
+    },
+    {
+        id: 'EdgeApps',
+        title: 'Scroll to Edge Apps'
+    },
+    {
+        id: 'iCareOriginal',
+        title: 'Scroll to iCARE (Original)'
+    }
+];
+
+const systemClick = (index: number) => {
+    if (index >= systems.length || index < 0) {
+        return;
+    };
+    expanded.value = 'systems';
+    scroll(`#${systems[index].id}`);
+};
 
 const buttonClick = (action: string) => {
     expanded.value = null;
@@ -146,21 +189,11 @@ const scroll = (selector: string) => {
         <button class="btn" title="Scroll to systems" @click="buttonClick('Systems')">
             <span class="fad fa-fw fa-computer" :class="classes"></span>
         </button>
-        <button v-if="expanded === 'systems'" class="btn btn-sm" :class="subclasses" title="Scroll to iCARE (Modernized)" @click="buttonClick('iCareModernized')">
-            <span class="fad fa-1"></span>
-        </button>
-        <button v-if="expanded === 'systems'" class="btn btn-sm" :class="subclasses" title="Scroll to Internet Apps" @click="buttonClick('InternetApps')">
-            <span class="fad fa-2"></span>
-        </button>
-        <button v-if="expanded === 'systems'" class="btn btn-sm" :class="subclasses" title="Scroll to eGEM" @click="buttonClick('eGemOriginal')">
-            <span class="fad fa-3"></span>
-        </button>
-        <button v-if="expanded === 'systems'" class="btn btn-sm" :class="subclasses" title="Scroll to Edge Apps" @click="buttonClick('EdgeApps')">
-            <span class="fad fa-4"></span>
-        </button>
-        <button v-if="expanded === 'systems'" class="btn btn-sm" :class="subclasses" title="Scroll to iCARE (Original)" @click="buttonClick('iCareOriginal')">
-            <span class="fad fa-5"></span>
-        </button>
+        <template v-for="(system, index) in systems">
+            <button v-if="expanded === 'systems'" class="btn btn-sm" :class="subclasses" :title="system.title" @click="systemClick(index)">
+                <span :class="`fad fa-${index + 1}`"></span>
+            </button>
+        </template>
         <ScrollToBottom></ScrollToBottom>
     </div>
 </template>

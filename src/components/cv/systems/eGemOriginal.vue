@@ -7,7 +7,7 @@ import Term from '../../layout/Term.vue';
 
 <template>
     <System 
-        id="eGemOriginal"
+        id="eGem"
         name="eGEM"
         from="May 2019"
         to="Present"
