@@ -1,7 +1,9 @@
 <script setup lang="ts">
 import Section from '../layout/Section.vue';
-import EdgeAppsOriginal from './systems/EdgeAppsOriginal.vue';
-import EdgeAppsModernization from './systems/EdgeAppsModernization.vue';
+import ConnexionApps from './systems/ConnexionApps.vue';
+import EdgeApps from './systems/EdgeApps.vue';
+import IntranetApps from './systems/IntranetApps.vue';
+import InternetApps from './systems/InternetApps.vue';
 import eGemOriginal from './systems/eGemOriginal.vue';
 import iCareOriginal from './systems/iCareOriginal.vue';
 import iCareModernization from './systems/iCareModernization.vue';
@@ -10,9 +12,11 @@ import iCareModernization from './systems/iCareModernization.vue';
 <template>
     <Section id="SystemsSection" heading="Systems" icon="fa-computer">
         <iCareModernization></iCareModernization>
-        <EdgeAppsModernization></EdgeAppsModernization>
+        <InternetApps></InternetApps>
+        <IntranetApps></IntranetApps>
         <eGemOriginal></eGemOriginal>
-        <EdgeAppsOriginal></EdgeAppsOriginal>
+        <ConnexionApps></ConnexionApps>
+        <EdgeApps></EdgeApps>
         <iCareOriginal></iCareOriginal>
     </Section>
 </template>
