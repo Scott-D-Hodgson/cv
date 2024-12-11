@@ -7,14 +7,28 @@ import DarkModeToggle from './buttons/DarkModeToggle.vue';
 import FocusOpen from './buttons/FocusOpen.vue';
 import { computed, ref } from 'vue';
 
-interface iSystems {
+interface iMenuItems {
     id: string,
     title: string
 }
 
 const darkMode = useDarkMode();
 const expanded = ref<'employment' | 'education' | 'systems' | null>(null);
-const systems: iSystems[] = [
+const positions: iMenuItems[] = [
+    {
+        id: 'TechnicalLead',
+        title: 'Scroll to Technical Lead'
+    },
+    {
+        id: 'SeniorDeveloper',
+        title: 'Scroll to Senior Developer'
+    },
+    {
+        id: 'SeniorProgrammerAnalyst',
+        title: 'Scroll to Senior Technical Analyst'
+    }
+];
+const systems: iMenuItems[] = [
     {
         id: 'iCareModernization',
         title: 'Scroll to iCARE (Modernization)'
@@ -42,15 +56,30 @@ const systems: iSystems[] = [
     {
         id: 'iCareOriginal',
         title: 'Scroll to iCARE (Original)'
+    },
+    {
+        id: 'eSubmission',
+        title: 'Scroll to e-Submission'
     }
 ];
+
+const sectionClick = (selector: string, area: 'systems' | 'employment' | 'education') => {
+    expanded.value = area;
+    scroll(selector);
+};
+
+const positionClick = (index: number) => {
+    if (index >= positions.length || index < 0) {
+        return;
+    };
+    sectionClick(`#${positions[index].id}`, 'employment');
+};
 
 const systemClick = (index: number) => {
     if (index >= systems.length || index < 0) {
         return;
     };
-    expanded.value = 'systems';
-    scroll(`#${systems[index].id}`);
+    sectionClick(`#${systems[index].id}`, 'systems');
 };
 
 const buttonClick = (action: string) => {
@@ -66,18 +95,6 @@ const buttonClick = (action: string) => {
             scroll('#EmploymentSection');
             expanded.value = 'employment';
             break;
-        case 'TechnicalLead':
-            scroll('#TechnicalLead');
-            expanded.value = 'employment';
-            break;
-        case 'SeniorDeveloper':
-            scroll('#SeniorDeveloper');
-            expanded.value = 'employment';
-            break;
-        case 'SeniorProgrammerAnalyst':
-            scroll('#SeniorProgrammerAnalyst');
-            expanded.value = 'employment';
-            break; 
         case 'Education':
             scroll('#EducationSection');
             expanded.value = 'education';
@@ -98,26 +115,6 @@ const buttonClick = (action: string) => {
             scroll('#SystemsSection');
             expanded.value = 'systems';
             break;
-        case 'iCareModernized':
-            scroll('#iCareModernization');
-            expanded.value = 'systems';
-            break; 
-        case 'InternetApps':
-            scroll('#InternetApps');
-            expanded.value = 'systems';
-            break; 
-        case 'eGemOriginal':
-            scroll('#eGemOriginal');
-            expanded.value = 'systems';
-            break; 
-        case 'EdgeApps':
-            scroll('#EdgeApps');
-            expanded.value = 'systems';
-            break; 
-        case 'iCareOriginal':
-            scroll('#iCareOriginal');
-            expanded.value = 'systems';
-            break; 
     };
 };
 
@@ -165,15 +162,11 @@ const scroll = (selector: string) => {
         <button class="btn" title="Scroll to employment" @click="buttonClick('Employment')">
             <span class="fad fa-fw fa-id-badge" :class="classes"></span>
         </button>
-        <button v-if="expanded === 'employment'" class="btn btn-sm" :class="subclasses" title="Scroll to Technical Lead" @click="buttonClick('TechnicalLead')">
-            <span class="fad fa-1"></span>
-        </button>
-        <button v-if="expanded === 'employment'" class="btn btn-sm" :class="subclasses" title="Scroll to Senior Developer" @click="buttonClick('SeniorDeveloper')">
-            <span class="fad fa-2"></span>
-        </button>
-        <button v-if="expanded === 'employment'" class="btn btn-sm" :class="subclasses" title="Scroll to Senior Programmer Analyst" @click="buttonClick('SeniorProgrammerAnalyst')">
-            <span class="fad fa-3"></span>
-        </button>
+        <template v-for="(position, index) in positions">
+            <button v-if="expanded === 'employment'" class="btn btn-sm" :class="subclasses" :title="position.title" @click="positionClick(index)">
+                <span :class="`fad fa-${index + 1}`"></span>
+            </button>
+        </template>
         <button class="btn" title="Scroll to education" @click="buttonClick('Education')">
             <span class="fad fa-fw fa-graduation-cap" :class="classes"></span>
         </button>
