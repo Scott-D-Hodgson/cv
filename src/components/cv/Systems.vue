@@ -7,6 +7,7 @@ import InternetApps from './systems/InternetApps.vue';
 import eGemOriginal from './systems/eGemOriginal.vue';
 import iCareOriginal from './systems/iCareOriginal.vue';
 import iCareModernization from './systems/iCareModernization.vue';
+import eSubmission from './systems/eSubmission.vue';
 </script>
 
 <template>
@@ -18,6 +19,7 @@ import iCareModernization from './systems/iCareModernization.vue';
         <ConnexionApps></ConnexionApps>
         <EdgeApps></EdgeApps>
         <iCareOriginal></iCareOriginal>
+        <eSubmission></eSubmission>
     </Section>
 </template>
 
