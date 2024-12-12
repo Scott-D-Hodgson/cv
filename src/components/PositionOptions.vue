@@ -28,6 +28,20 @@ const positions: iMenuItems[] = [
         title: 'Scroll to Senior Technical Analyst'
     }
 ];
+const trainings: iMenuItems[] = [
+    {
+        id: 'AlgonquinCollege',
+        title: 'Scroll to Algonquin College'
+    },
+    {
+        id: 'LearningTree',
+        title: 'Scroll to Learning Tree'
+    },
+    {
+        id: 'GlobalKnowledge',
+        title: 'Scroll to Global Knowledge'
+    }
+];
 const systems: iMenuItems[] = [
     {
         id: 'iCareModernization',
@@ -64,6 +78,10 @@ const systems: iMenuItems[] = [
     {
         id: 'iLove',
         title: 'Scroll to iLove'
+    },
+    {
+        id: 'WebCims',
+        title: 'Scroll to WebCIMS'
     }
 ];
 
@@ -77,6 +95,13 @@ const positionClick = (index: number) => {
         return;
     };
     sectionClick(`#${positions[index].id}`, 'employment');
+};
+
+const trainingClick = (index: number) => {
+    if (index >= trainings.length || index < 0) {
+        return;
+    };
+    sectionClick(`#${trainings[index].id}`, 'education');
 };
 
 const systemClick = (index: number) => {
@@ -167,28 +192,24 @@ const scroll = (selector: string) => {
             <span class="fad fa-fw fa-id-badge" :class="classes"></span>
         </button>
         <template v-for="(position, index) in positions">
-            <button v-if="expanded === 'employment'" class="btn btn-sm" :class="subclasses" :title="position.title" @click="positionClick(index)">
-                <span :class="`fad fa-${index + 1}`"></span>
+            <button v-if="expanded === 'employment'" class="btn btn-sm pt-0 pb-0" :class="subclasses" :title="position.title" @click="positionClick(index)">
+                <span :class="`fad fa-${String.fromCharCode(index + 97)}`"></span>
             </button>
         </template>
         <button class="btn" title="Scroll to education" @click="buttonClick('Education')">
             <span class="fad fa-fw fa-graduation-cap" :class="classes"></span>
         </button>
-        <button v-if="expanded === 'education'" class="btn btn-sm" :class="subclasses" title="Scroll to Algonquin College" @click="buttonClick('AlgonquinCollege')">
-            <span class="fad fa-1"></span>
-        </button>
-        <button v-if="expanded === 'education'" class="btn btn-sm" :class="subclasses" title="Scroll to Learning Tree" @click="buttonClick('LearningTree')">
-            <span class="fad fa-2"></span>
-        </button>
-        <button v-if="expanded === 'education'" class="btn btn-sm" :class="subclasses" title="Scroll to Global Knowledge" @click="buttonClick('GlobalKnowledge')">
-            <span class="fad fa-3"></span>
-        </button>
+        <template v-for="(training, index) in trainings">
+            <button v-if="expanded === 'education'" class="btn btn-sm pt-0 pb-0" :class="subclasses" :title="training.title" @click="trainingClick(index)">
+                <span :class="`fad fa-${String.fromCharCode(index + 97)}`"></span>
+            </button>
+        </template>
         <button class="btn" title="Scroll to systems" @click="buttonClick('Systems')">
             <span class="fad fa-fw fa-computer" :class="classes"></span>
         </button>
         <template v-for="(system, index) in systems">
-            <button v-if="expanded === 'systems'" class="btn btn-sm" :class="subclasses" :title="system.title" @click="systemClick(index)">
-                <span :class="`fad fa-${index + 1}`"></span>
+            <button v-if="expanded === 'systems'" class="btn btn-sm pt-0 pb-0" :class="subclasses" :title="system.title" @click="systemClick(index)">
+                <span :class="`fad fa-${String.fromCharCode(index + 97)}`"></span>
             </button>
         </template>
         <ScrollToBottom></ScrollToBottom>
