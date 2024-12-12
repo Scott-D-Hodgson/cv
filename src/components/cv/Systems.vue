@@ -8,6 +8,7 @@ import eGemOriginal from './systems/eGemOriginal.vue';
 import iCareOriginal from './systems/iCareOriginal.vue';
 import iCareModernization from './systems/iCareModernization.vue';
 import eSubmission from './systems/eSubmission.vue';
+import iLove from './systems/iLove.vue';
 </script>
 
 <template>
@@ -20,8 +21,8 @@ import eSubmission from './systems/eSubmission.vue';
         <EdgeApps></EdgeApps>
         <iCareOriginal></iCareOriginal>
         <eSubmission></eSubmission>
+        <iLove></iLove>
     </Section>
 </template>
 
-<style scoped>
-</style>
+<style scoped></style>
