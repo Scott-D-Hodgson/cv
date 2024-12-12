@@ -26,6 +26,10 @@ const positions: iMenuItems[] = [
     {
         id: 'SeniorProgrammerAnalyst',
         title: 'Scroll to Senior Technical Analyst'
+    },
+    {
+        id: 'JuniorProgrammerAnalyst',
+        title: 'Scroll to Junior Technical Analyst'
     }
 ];
 const trainings: iMenuItems[] = [
