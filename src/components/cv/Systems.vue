@@ -11,6 +11,7 @@ import eSubmission from './systems/eSubmission.vue';
 import iLove from './systems/iLove.vue';
 import WebCims from './systems/WebCims.vue';
 import Ots from './systems/Ots.vue';
+import Lims from './systems/Lims.vue';
 </script>
 
 <template>
@@ -26,6 +27,7 @@ import Ots from './systems/Ots.vue';
         <iLove></iLove>
         <WebCims></WebCims>
         <Ots></Ots>
+        <Lims></Lims>
     </Section>
 </template>
 
