@@ -1,8 +1,9 @@
 <script setup lang="ts">
 import Section from '../layout/Section.vue';
+import TechnicalLead from './employment/TechnicalLead.vue';
 import SeniorDeveloper from './employment/SeniorDeveloper.vue';
 import SeniorProgrammerAnalyst from './employment/SeniorProgrammerAnalyst.vue';
-import TechnicalLead from './employment/TechnicalLead.vue';
+import JuniorProgrammerAnalyst from './employment/JuniorProgrammerAnalyst.vue';
 </script>
 
 <template>
@@ -10,8 +11,8 @@ import TechnicalLead from './employment/TechnicalLead.vue';
         <TechnicalLead></TechnicalLead>
         <SeniorDeveloper></SeniorDeveloper>
         <SeniorProgrammerAnalyst></SeniorProgrammerAnalyst>
+        <JuniorProgrammerAnalyst></JuniorProgrammerAnalyst>
     </Section>
 </template>
 
-<style scoped>
-</style>
+<style scoped></style>
