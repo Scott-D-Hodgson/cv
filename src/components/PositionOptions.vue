@@ -86,6 +86,10 @@ const systems: iMenuItems[] = [
     {
         id: 'Ots',
         title: 'Scroll to OTS'
+    },
+    {
+        id: 'Lims',
+        title: 'Scroll to LIMS'
     }
 ];
 
