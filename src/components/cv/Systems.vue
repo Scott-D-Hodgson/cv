@@ -9,6 +9,7 @@ import iCareOriginal from './systems/iCareOriginal.vue';
 import iCareModernization from './systems/iCareModernization.vue';
 import eSubmission from './systems/eSubmission.vue';
 import iLove from './systems/iLove.vue';
+import WebCims from './systems/WebCims.vue';
 </script>
 
 <template>
@@ -22,6 +23,7 @@ import iLove from './systems/iLove.vue';
         <iCareOriginal></iCareOriginal>
         <eSubmission></eSubmission>
         <iLove></iLove>
+        <WebCims></WebCims>
     </Section>
 </template>
 
