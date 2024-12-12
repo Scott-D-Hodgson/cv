@@ -12,6 +12,7 @@ import iLove from './systems/iLove.vue';
 import WebCims from './systems/WebCims.vue';
 import Ots from './systems/Ots.vue';
 import Lims from './systems/Lims.vue';
+import Msucm from './systems/Msucm.vue'
 </script>
 
 <template>
@@ -28,6 +29,7 @@ import Lims from './systems/Lims.vue';
         <WebCims></WebCims>
         <Ots></Ots>
         <Lims></Lims>
+        <Msucm></Msucm>
     </Section>
 </template>
 
