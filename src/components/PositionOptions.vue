@@ -82,6 +82,10 @@ const systems: iMenuItems[] = [
     {
         id: 'WebCims',
         title: 'Scroll to WebCIMS'
+    },
+    {
+        id: 'Ots',
+        title: 'Scroll to OTS'
     }
 ];
 
