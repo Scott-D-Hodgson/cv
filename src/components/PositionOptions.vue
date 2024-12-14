@@ -39,12 +39,12 @@ const trainings: iMenuItems[] = [
         title: 'Scroll to Algonquin College'
     },
     {
-        id: 'LearningTree',
-        title: 'Scroll to Learning Tree'
-    },
-    {
         id: 'GlobalKnowledge',
         title: 'Scroll to Global Knowledge'
+    },
+    {
+        id: 'LearningTree',
+        title: 'Scroll to Learning Tree'
     }
 ];
 const systems: iMenuItems[] = [
