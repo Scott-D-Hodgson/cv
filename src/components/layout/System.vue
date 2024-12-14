@@ -21,7 +21,7 @@ const darkMode = useDarkMode();
 
 <template>
     <div>
-        <div class="sticky-top" :class="darkMode.isOn() ? 'bg-dark' : 'bg-light'">
+        <div :class="darkMode.isOn() ? 'bg-dark' : 'bg-light'">
             <div :id="props.id" class="row">
                 <div class="col-12 col-md-8">
                     <h3 class="h4 mb-0">
