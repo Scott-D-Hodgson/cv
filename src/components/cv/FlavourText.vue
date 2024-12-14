@@ -5,8 +5,8 @@ import Section from '../layout/Section.vue';
 <template>
     <Section id="FlavourTextSection">
         <blockquote class="blockquote m-0 p-2">
-            <p class="small">Solution-driven, systems integrater, and passioned code-auther on the clock.
-                Smart home dabler, gadget enthusiast, international student host, nature hiker, occasional gamer,
+            <p class="small">Solution-driven, systems integrator, and passioned code-author on the clock.
+                Smart home dabbler, gadget enthusiast, international student host, nature hiker, occasional gamer,
                 and loving husband and parent off-the-clock. Furiously curious, always.
             </p>
         </blockquote>

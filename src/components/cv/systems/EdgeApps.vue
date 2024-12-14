@@ -11,7 +11,7 @@ import Term from '../../layout/Term.vue';
         id="EdgeApps" 
         name="Edge Apps"
         from="Nov. 2016" 
-        to="May 2019"
+        to="Apr. 2021"
         :technologies="[
             { 
                 reference: 'html',
