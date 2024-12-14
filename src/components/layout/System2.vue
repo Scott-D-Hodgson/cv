@@ -24,7 +24,7 @@ const darkMode = useDarkMode();
 
 <template>
     <div>
-        <div class="sticky-top" :class="darkMode.isOn() ? 'bg-dark' : 'bg-light'">
+        <div :class="darkMode.isOn() ? 'bg-dark' : 'bg-light'">
             <div :id="props.id" class="row">
                 <div class="col-12 col-md-8">
                     <h3 class="h4 mb-0">
@@ -41,11 +41,11 @@ const darkMode = useDarkMode();
                     <strong>{{ props.from }} - {{ props.to }}</strong>
                 </div>
             </div>
-            <div v-if="props.technologies" class="row">
-                <div class="col-12">
-                    <div class="border rounded mt-2 mb-2 pt-2 pb-2 ps-3 pe-3 small text-muted">
-                        <strong class="sr-only">Technologies:</strong> <TermList :terms="props.technologies" separator="' |'" /> 
-                    </div>
+        </div>
+        <div v-if="props.technologies" class="row">
+            <div class="col-12">
+                <div class="border rounded mt-2 mb-2 pt-2 pb-2 ps-3 pe-3 small text-muted">
+                    <strong class="sr-only">Technologies:</strong> <TermList :terms="props.technologies" separator="' |'" /> 
                 </div>
             </div>
         </div>
