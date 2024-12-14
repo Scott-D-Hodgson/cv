@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import Position from '../../layout/Position.vue';
-import Term from '../../layout/Term.vue';
 import FocusItem from '../../layout/FocusItem.vue';
 import FocusList from '../../layout/FocusList.vue';
+import Position from '../../layout/Position.vue';
+import Term from '../../layout/Term.vue';
 </script>
 
 <template>
@@ -12,10 +12,25 @@ import FocusList from '../../layout/FocusList.vue';
         from="Dec. 2005" 
         to="Feb. 2010" 
         :organization="[
-            { reference: 'goc', acronym: 'GoC', value: 'Government of Canada' },
-            { reference: 'cic', acronym: 'CIC', value: 'Citizenship and Immigration Canada' },
-            { reference: 'imtb', acronym: 'IMTB', value: 'Information Management and Technologies Branch' },
-            { reference: 'corporatesystems', value: 'Corporate Systems' }
+            { 
+                reference: 'goc', 
+                acronym: 'GoC', 
+                value: 'Government of Canada' 
+            },
+            { 
+                reference: 'cic', 
+                acronym: 'CIC', 
+                value: 'Citizenship and Immigration Canada' 
+            },
+            { 
+                reference: 'imtb', 
+                acronym: 'IMTB', 
+                value: 'Information Management and Technologies Branch' 
+            },
+            { 
+                reference: 'corporatesystems', 
+                value: 'Corporate Systems' 
+            }
         ]">
         <FocusList>
             <FocusItem>Conceptualized and implemented a modular reporting system leveraging <Term 
@@ -49,8 +64,6 @@ import FocusList from '../../layout/FocusList.vue';
             <FocusItem>Acted as a <Term reference="poc" acronym="PoC" value="Point-of-Contact"></Term> for clients, 
                 collaborating on feature design, implementation, and production support to address business needs 
                 effectively.</FocusItem>
-            <FocusItem>Designed a modular database structure to support application development, enabling component
-                reuse and earning the GTEC Bronze Award for innovation and efficiency.</FocusItem>
         </FocusList>
     </Position>
 </template>
