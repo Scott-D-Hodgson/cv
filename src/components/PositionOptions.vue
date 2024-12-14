@@ -4,7 +4,8 @@ import ScrollToBottom from './buttons/ScrollToBottom.vue';
 import { useDarkMode } from '../composables/useDarkMode';
 import HandednessToggle from './buttons/HandednessToggle.vue';
 import DarkModeToggle from './buttons/DarkModeToggle.vue';
-import FocusOpen from './buttons/FocusOpen.vue';
+// todo: Revisit when content is updated
+// import FocusOpen from './buttons/FocusOpen.vue';
 import { computed, ref } from 'vue';
 
 interface iMenuItems {
@@ -193,9 +194,11 @@ const scroll = (selector: string) => {
         <DarkModeToggle></DarkModeToggle>
         <HandednessToggle></HandednessToggle>
     </div>
+    <!--
     <div class="btn-group-vertical border rounded mb-2" :class="classes">
         <FocusOpen></FocusOpen>
     </div>
+    -->
     <div class="btn-group-vertical border rounded mb-2" :class="classes">
         <ScrollToTop></ScrollToTop>
         <button class="btn" title="Scroll to quotation" @click="buttonClick('FlavourText')">
