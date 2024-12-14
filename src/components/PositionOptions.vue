@@ -4,7 +4,8 @@ import ScrollToBottom from './buttons/ScrollToBottom.vue';
 import { useDarkMode } from '../composables/useDarkMode';
 import HandednessToggle from './buttons/HandednessToggle.vue';
 import DarkModeToggle from './buttons/DarkModeToggle.vue';
-import FocusOpen from './buttons/FocusOpen.vue';
+// todo: Revisit when content is updated
+// import FocusOpen from './buttons/FocusOpen.vue';
 import { computed, ref } from 'vue';
 
 interface iMenuItems {
