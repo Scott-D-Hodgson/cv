@@ -10,7 +10,7 @@ import TermList from '../../layout/TermList.vue';
         id="ConnexionApps" 
         name="Connexion Apps"
         from="May 2017" 
-        to="May 2019"
+        to="Apr. 2021"
         :technologies="[
             { 
                 reference: 'html',

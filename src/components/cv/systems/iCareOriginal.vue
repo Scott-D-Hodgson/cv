@@ -11,7 +11,7 @@ import Term from '../../layout/Term.vue';
         name="iCARE"
         subtitle="Original"
         from="Dec. 2012"
-        to="Jun. 2017"
+        to="Apr. 2021"
         :technologies="[
                 { 
                     reference: 'asp',
