@@ -193,9 +193,11 @@ const scroll = (selector: string) => {
         <DarkModeToggle></DarkModeToggle>
         <HandednessToggle></HandednessToggle>
     </div>
+    <!--
     <div class="btn-group-vertical border rounded mb-2" :class="classes">
         <FocusOpen></FocusOpen>
     </div>
+    -->
     <div class="btn-group-vertical border rounded mb-2" :class="classes">
         <ScrollToTop></ScrollToTop>
         <button class="btn" title="Scroll to quotation" @click="buttonClick('FlavourText')">
