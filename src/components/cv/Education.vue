@@ -8,8 +8,8 @@ import LearningTree from './education/LearningTree.vue';
 <template>
     <Section id="EducationSection" heading="Education" icon="fa-graduation-cap">
         <AlgonquinCollege></AlgonquinCollege>
-        <LearningTree></LearningTree>
         <GlobalKnowledge></GlobalKnowledge>
+        <LearningTree></LearningTree>
     </Section>
 </template>
 

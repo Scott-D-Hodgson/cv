@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import TermList from '../../layout/TermList.vue';
+import Term from '../../layout/Term.vue';
 import Trainer from '../../layout/Trainer.vue';
 </script>
 
@@ -8,16 +8,8 @@ import Trainer from '../../layout/Trainer.vue';
         <template v-slot:provider>Global Knowledge</template>
         <template v-slot:range>2020</template>
         <p>
-            <strong>Certificates:</strong><br/>
-            <TermList 
-                separator="' | '"
-                :terms="[
-                    {
-                        reference: 'GlobalKnowledgeCourseAzureDevOps',
-                        value: 'Azure DevOps' 
-                    }
-                ]">
-            </TermList>
+            <strong>Certificate:</strong>&nbsp;
+            <Term reference="globalknowledgecourseado" acronym="ADO" value="Azure DevOps"></Term>
         </p>
     </Trainer>
 </template>

@@ -8,65 +8,94 @@ import Trainer from '../../layout/Trainer.vue';
         <template v-slot:provider>Learning Tree</template>
         <template v-slot:range>2003 - 2024</template>
         <p>
-            <strong>Certificates:</strong><br/>
+            <strong>Certificates (by subject matter):</strong>&nbsp;
             <TermList 
-                separator="' | '"
+                separator="', '"
                 :terms="[
                     {
-                        reference: 'LearningTreeCourseBlazor',
-                        value: 'Blazor Course: Building Web Applications' 
+                        reference: 'learningtreecourseangular',
+                        value: 'Angular' 
                     },
                     { 
-                        reference: 'LearningTreeCourseDocker',
-                        value: 'Introduction to Docker Training' 
-                    },
-                    { 
-                        reference: 'LearningTreeCourseReact',
-                        value: 'Building Web Applications with React 16' 
-                    },
-                    { 
-                        reference: 'LearningTreeCourseAspNetCore',
-                        value: 'ASP.NET Learning CORE & CORE 7 for ASP.NET MVC Developers Training' 
-                    },
-                    {
-                        reference: 'LearningTreeCourseAngular',
-                        value: 'Introduction to Angular' 
-                    },
-                    { 
-                        reference: 'LearningTreeCourseArchitecting',
+                        reference: 'learningtreecoursearchitecting',
                         value: 'Architecting Enterprise Applications' 
                     },
                     { 
+                        reference: 'learningtreecourseaspnetcore',
+                        acronym: 'ASP.NET CORE',
+                        value: 'Active Server Pages .NET CORE'
+                    },
+                    { 
+                        reference: 'learningtreecourseaspnetcore',
+                        acronym: 'ASP.NET MVC',
+                        value: 'Active Server Pages .NET Model-View-Controller' 
+                    },
+                    { 
+                        reference: 'learningtreecoursewebforms',
+                        acronym: 'ASP.NET WebForms',
+                        value: 'Active Server Pages .NET WebForms' 
+                    },
+                    { 
+                        reference: 'learningtreecourseassetivecommunication',
+                        value: 'Assertive Communication Skills' 
+                    },
+                    { 
+                        reference: 'learningtreecourseawsdevelopment',
+                        acronym: 'AWS Development',
+                        value: 'Amazon Web Services Development' 
+                    },
+                    {
+                        reference: 'learningtreecourseblazor',
+                        value: 'Blazor' 
+                    },
+                    { 
+                        reference: 'learningtreecoursedocker',
+                        value: 'Docker' 
+                    },
+                    { 
+                        reference: 'learningtreecoursewebservices',
+                        acronym: 'gRPC',
+                        value: 'Remote Procedure Call' 
+                    },
+                    { 
+                        reference: 'learningtreecourseiis',
+                        acronym: 'IIS',
+                        value: 'Internet Information Services' 
+                    },
+                    { 
+                        reference: 'learningtreecourseappledevelopment',
+                        value: 'iPhone/iPad Development' 
+                    },
+                    { 
+                        reference: 'learningtreecoursejavaspringhibernate',
+                        value: 'Java Spring/Hibernate' 
+                    },
+                    { 
+                        reference: 'learningtreecourselinq',
+                        acronym: 'LINQ',
+                        value: 'Language Integrated Query' 
+                    },
+                    { 
+                        reference: 'learningtreecoursereact',
+                        value: 'React' 
+                    },
+                    { 
+                        reference: 'learningtreecoursesecuringwindows',
+                        value: 'Securing Windows Server' 
+                    },
+                    { 
                         reference: 'LearningTreeCourseWebServices',
-                        value: '.NET Web Services: WCF, Web API, gRPC, and SignalR' 
+                        value: 'SignalR' 
                     },
                     { 
-                        reference: 'LearningTreeCourseLinq',
-                        value: 'Introduction to Language Integrated Query (LINQ)' 
+                        reference: 'LearningTreeCourseWebServices',
+                        acronym: 'WCF',
+                        value: 'Windows Communication Foundation' 
                     },
                     { 
-                        reference: 'LearningTreeCourseAssetiveCommunication',
-                        value: 'Assertive Communication Skills Training' 
-                    },
-                    { 
-                        reference: 'LearningTreeCourseAppleDevelopment',
-                        value: 'iPhone and iPad Application Development Introduction' 
-                    },
-                    { 
-                        reference: 'LearningTreeCourseJavaSpringHibernate',
-                        value: 'Developing Modern Enterprise Java Applications Using Spring Training' 
-                    },
-                    { 
-                        reference: 'LearningTreeCourseWebForms',
-                        value: 'ASP.NET WebForms: A Comprehensive Hands-On Introduction' 
-                    },
-                    { 
-                        reference: 'LearningTreeCourseSecuringWindows',
-                        value: 'Securing Windows 2000: Hands-On' 
-                    },
-                    { 
-                        reference: 'LearningTreeCourseIIS',
-                        value: 'Hands-On Internet Information Services 5 for Windows 2000' 
+                        reference: 'LearningTreeCourseWebServices',
+                        acronym: 'Web API',
+                        value: 'Web Application Programming Interface' 
                     }
                 ]">
             </TermList>
