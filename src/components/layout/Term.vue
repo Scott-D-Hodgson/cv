@@ -1,5 +1,13 @@
 <script setup lang="ts">
+import { useDarkMode } from '../../composables/useDarkMode';
 import { useTermModal } from '../../composables/useTermModal';
+import { ref, computed } from 'vue';
+
+const darkMode = useDarkMode();
+
+const highlight = ref(computed(() => {
+    return darkMode.isOn() ? 'rgba(128, 128, 128)' : 'rgba(220, 20, 60)';
+}));
 
 export interface ITerm {
     reference: string;
@@ -59,7 +67,12 @@ const show = () => {
 
 <style scoped>
 button {
-    background-color: inherit;
-    display: contents;
+    background-color: rgba(128,128,128,0);
+    display: inline-block;
+}
+
+button:hover {
+    text-decoration-line: underline;
+    text-decoration-color: v-bind('highlight');
 }
 </style>
