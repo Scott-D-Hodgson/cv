@@ -111,17 +111,9 @@ const options: { month: 'short', year: 'numeric' } = {
                 to: to
             },
             { 
-                reference: 'ci', 
-                acronym: 'CI', 
-                value: 'Continuous Integration', 
-                focus: ['infrastructure'],
-                from: from,
-                to: to
-            },
-            { 
-                reference: 'cd', 
-                acronym: 'CD', 
-                value: 'Continuous Deployment', 
+                reference: 'cicd', 
+                acronym: 'CI/CD', 
+                value: 'Continuous Integration/Continuous Deployment', 
                 focus: ['infrastructure'],
                 from: from,
                 to: to

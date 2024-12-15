@@ -4,7 +4,7 @@ import ConnexionApps from './systems/ConnexionApps.vue';
 import EdgeApps from './systems/EdgeApps.vue';
 import IntranetApps from './systems/IntranetApps.vue';
 import InternetApps from './systems/InternetApps.vue';
-import eGemOriginal from './systems/eGemOriginal.vue';
+import eGem from './systems/eGem.vue';
 import iCareOriginal from './systems/iCareOriginal.vue';
 import iCareModernization from './systems/iCareModernization.vue';
 import eSubmission from './systems/eSubmission.vue';
@@ -20,7 +20,7 @@ import Msucm from './systems/Msucm.vue'
         <iCareModernization></iCareModernization>
         <InternetApps></InternetApps>
         <IntranetApps></IntranetApps>
-        <eGemOriginal></eGemOriginal>
+        <eGem></eGem>
         <ConnexionApps></ConnexionApps>
         <EdgeApps></EdgeApps>
         <iCareOriginal></iCareOriginal>

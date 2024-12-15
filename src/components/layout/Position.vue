@@ -18,7 +18,7 @@ const darkMode = useDarkMode();
 <template> 
     <div>
         <div :class="darkMode.isOn() ? 'bg-dark' : 'bg-light'">
-            <div :id="props.id" class="row">
+            <div :id="props.id" class="row mt-3">
                 <div class="col-12 col-md-8">
                     <h3 class="h4 mb-0">
                         {{ props.title }}
