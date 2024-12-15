@@ -1,80 +1,123 @@
 <script setup lang="ts">
-import FocusList from '../../layout/FocusList.vue';
-import FocusItem from '../../layout/FocusItem.vue';
-import System from '../../layout/System.vue';
+import System from '../../layout/System2.vue';
 import Term from '../../layout/Term.vue';
+import { ref } from 'vue';
+
+const from = ref<Date>(new Date("2002-01-01T00:00:00.000-05:00"));
+const to = ref<Date>(new Date("2010-02-01T00:00:00.000-05:00"));
+const fromOptions: { year: 'numeric' } = { 
+    year: 'numeric'
+};
+const toOptions: { month: 'short', year: 'numeric' } = { 
+    month: 'short', 
+    year: 'numeric'
+};
 </script>
 
 <template>
     <System 
         id="Msucm"
         name="MSUCM"
-        from="2002" 
-        to="Feb. 2010"
+        :from="from.toLocaleDateString('en-CA', fromOptions)"
+        :to="to.toLocaleDateString('en-CA', toOptions)"
         :technologies="[
             { 
-                reference: 'msaccess',
-                acronym: 'MS Access', 
-                value: 'Microsoft Access' 
+                reference: 'access', 
+                value: 'Access', 
+                focus: ['back-end', 'full-stack'],
+                from: from,
+                to: to
             },
             { 
-                reference: 'sybase',
-                value: 'Sybase' 
+                reference: 'crystalreports', 
+                value: 'Crystal Reports', 
+                focus: ['back-end', 'full-stack'],
+                from: from,
+                to: to
+            },
+            { 
+                reference: 'installshield', 
+                value: 'InstallShield', 
+                focus: ['infrastructure'],
+                from: from,
+                to: to
+            },
+            { 
+                reference: 'msi', 
+                acronym: 'MSI', 
+                value: 'Microsoft Installer', 
+                focus: ['infrastructure'],
+                from: from,
+                to: to
+            },
+            {
+                reference: 'oop',
+                acronym: 'OOP',
+                value: 'Object-Oriented Programming',
+                focus: ['back-end', 'full-stack'],
+                from: from,
+                to: to
+            },
+            { 
+                reference: 'sql', 
+                acronym: 'SQL', 
+                value: 'Structured Query Language', 
+                focus: ['back-end', 'full-stack'],
+                from: from,
+                to: to 
+            },
+            { 
+                reference: 'sybase', 
+                value: 'Sybase', 
+                focus: ['back-end', 'full-stack'],
+                from: from,
+                to: to 
             },
             { 
                 reference: 'vb6',
                 acronym: 'VB6', 
-                value: 'Visual Basic 6' 
+                value: 'Visual Basic 6', 
+                focus: ['front-end', 'back-end', 'full-stack'],
+                from: from,
+                to: to 
             },
             { 
-                reference: 'crystalreports',
-                value: 'Crystal Reports' 
-            },
-            { 
-                reference: 'installshield',
-                value: 'InstallShield' 
-            },
-            { 
-                reference: 'vss',
+                reference: 'vss', 
                 acronym: 'VSS', 
-                value: 'Visual SourceSafe' 
+                value: 'Visual SourceSafe', 
+                focus: ['infrastructure'],
+                from: from,
+                to: to 
             },
             { 
-                reference: 'windows',
-                value: 'Windows' 
+                reference: 'windows', 
+                value: 'Windows', 
+                focus: ['infrastructure'],
+                from: from,
+                to: to 
             }
         ]">
-        <FocusList>
-            <FocusItem>Accessed data from the original <Term reference="msaccess" acronym="MS Access" 
-                value="Microsoft Access"></Term> database by bypassing password protection to ensure data continuity.
-            </FocusItem>
-            <FocusItem>Designed a normalized <Term reference="erm" acronym="ERM" value="Entity-Relationship Model">
-                </Term> as the foundation for the replacement database structure.
-            </FocusItem>
-            <FocusItem>Implemented the new database schema within a <Term reference="sybase" value="Sybase"></Term>&nbsp;
-                <Term reference="rdbms" acronym="RDBMS" value="Relational Database Management Software"></Term>.
-            </FocusItem>
-            <FocusItem>Developed a <Term reference="vb6" acronym="VB6" value="Visual Basic 6"></Term>
-                application to create a user-friendly interface for streamlined data management.
-            </FocusItem>
-            <FocusItem>Engineered a data conversion process to extract and transform legacy data for integration into the
-                new database structure.
-            </FocusItem>
-            <FocusItem>Integrated <Term reference="crystalreports" value="Crystal Reports"></Term>
-                to enable dynamic reporting and secure export of client information.
-            </FocusItem>
-            <FocusItem>Prepared and configured an <Term reference="installshield" value="InstallShield"></Term>&nbsp;
-                <Term reference="msi" acronym="MSI" value="Microsoft Installer"></Term> package for desktop application 
-                deployment.
-            </FocusItem>
-            <FocusItem>Maintained source code integrity by utilizing <Term reference="vss" acronym="VSS" 
-                value="Visual Source Safe"></Term> for version control, adhering to team protocols.
-            </FocusItem>
-            <FocusItem>Participated in departmental training and code review sessions under the guidance of a senior
-                developer.
-            </FocusItem>
-        </FocusList>
+        <template v-slot:description>
+            <p>
+                The <Term reference="msucm" acronym="MSUCM" value="Medical Surveillance Unit Client Manager">
+                </Term> was the tracking system for clients of the department that were in the process of 
+                being assessed for their medical screenings. 
+            </p>
+        </template>
+        <template v-slot:initiative>
+            <p>
+                Originally developed by a third-party vendor, the application became unsupported and required 
+                modifications to meet the current tracking requirements of the <Term reference="msu" 
+                acronym="MSU" value="Medical Surveillance Unit"></Term> and technology standards of the 
+                department.
+            </p>
+        </template>
+        <template v-slot:accomplishments>
+            <ul>
+                <li>Successfully upgraded and deployed the product.</li>
+            </ul>
+        </template>
     </System>
 </template>
 
-<style scoped></style>
+<style scoped></style>        

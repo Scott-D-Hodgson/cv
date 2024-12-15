@@ -1,8 +1,14 @@
 <script setup lang="ts">
-import FocusItem from '../../layout/FocusItem.vue';
-import FocusList from '../../layout/FocusList.vue';
-import System from '../../layout/System.vue';
+import System from '../../layout/System2.vue';
 import Term from '../../layout/Term.vue';
+import { ref } from 'vue';
+
+const from = ref<Date>(new Date("2012-12-01T00:00:00.000-05:00"));
+const to = ref<Date>(new Date("2021-04-01T00:00:00.000-05:00"));
+const options: { month: 'short', year: 'numeric' } = { 
+    month: 'short', 
+    year: 'numeric'
+};
 </script>
 
 <template>
@@ -10,99 +16,306 @@ import Term from '../../layout/Term.vue';
         id="iCareOriginal"
         name="iCARE"
         subtitle="Original"
-        from="Dec. 2012"
-        to="Apr. 2021"
+        :from="from.toLocaleDateString('en-CA', options)"
+        :to="to.toLocaleDateString('en-CA', options)"
         :technologies="[
-                { 
-                    reference: 'asp',
-                    value: 'ASP' 
-                }, 
-                { 
-                    reference: 'dotnet',
-                    value: '.NET' 
-                }, 
-                { 
-                    reference: 'html',
-                    value: 'HTML' 
-                }, 
-                { 
-                    reference: 'css',
-                    value: 'CSS' 
-                }, 
-                { 
-                    reference: 'js',
-                    value: 'JS' 
-                }, 
-                { 
-                    reference: 'csharp',
-                    value: 'C#' 
-                }, 
-                { 
-                    reference: 'wet-boew',
-                    value: 'WET-BOEW' 
-                }, 
-                { 
-                    reference: 'tfs',
-                    value: 'TFS' 
-                }, 
-                { 
-                    reference: 'vs',
-                    acronym: 'VS', 
-                    value: 'Visual Studio' 
-                }, 
-                { 
-                    reference: 'soap',
-                    value: 'SOAP' 
-                }, 
-                { 
-                    reference: 'sql',
-                    value: 'SQL' 
-                }
-            ]"
-    >
-        <FocusList>
-            <FocusItem>Defined the technology stack using <Term reference="csharp" value="C#"></Term>, 
-                <Term reference="mvc" acronym="MVC" value="Model-View-Controller"></Term>, <Term 
-                reference="aspnet" acronym="ASP.NET" value="Active Server Pages .NET"></Term>, <Term 
-                reference="soap" acronym="SOAP" value="Simple Object Access Protocol"></Term>, and <Term
-                reference="sqlserver" value="SQL Server"></Term> to ensure a cohesive system architecture.
-            </FocusItem>
-            <FocusItem>Architected the solution, breaking down functional areas such as user management, permissions,
-                service lines, bulk upload, notifications, and secure messaging to meet the robust
-                requirements.</FocusItem>
-            <FocusItem>Mentored developers to familiarize them with the technology stack, development processes, and
-                system features, accelerating their contributions to the project.</FocusItem>
-            <FocusItem>Led initiatives for development best practices by setting code repository policies, such as
-                requiring two reviewers per <Term reference="pr" acronym="PR" value="Pull Request"></Term> 
-                passing test automations, and resolving all comments.</FocusItem>
-            <FocusItem>Investigated and prototyped <Term reference="specflow" value="SpecFlow"></Term> automated test 
-                integrations, establishing automated test projects and integrating code coverage reports into 
-                <Term reference="azuredevops" value="Azure DevOps"></Term>.</FocusItem>
-            <FocusItem>Established pipelines to verify submission builds, ensuring all unit tests pass, and generating
-                artifacts post-merge for robust, verified code deployment.</FocusItem>
-            <FocusItem>Configured and maintained the <Term reference="npe" acronym="NPE" 
-                value="Non-Production Environment"></Term> infrastructure for hosting the system, while also 
-                managing <Term reference="azuredevopsagents" value="Azure DevOps Agents"></Term> for consistent 
-                build and deployment support.</FocusItem>
-            <FocusItem>Developed and maintained <term reference="ci" acronym="CI" value="Continuous Integration">
-                </term> release pipelines, deploying code into <Term reference="npe" acronym="NPE" 
-                value="Non-Production Environment"></Term> environments to streamline the continuous 
-                integration process.</FocusItem>
-            <FocusItem>Prepared deliverables for production release, identifying and aligning resources required for
-                successful deployment.</FocusItem>
-            <FocusItem>Collaborated with the team lead, product owner, and business analyst to prioritize development
-                and resolve bugs, aligning on goals and workload distribution.</FocusItem>
-            <FocusItem>Conducted pair-programming sessions and recorded training sessions to remove team impediments,
-                supporting collaborative knowledge-sharing.</FocusItem>
-            <FocusItem>Provided input on business requirements, assessing technical feasibility, effort, and approach
-                to deliver actionable solutions.</FocusItem>
-            <FocusItem>Supported team performance evaluations by providing context on individual developer
-                contributions to the team lead.</FocusItem>
-            <FocusItem>Advocated <Term reference="dotnet" value=".NET"></Term> solution as a replacement for 
-                deprecated <Term reference="java" value="Java"></Term>-based system.</FocusItem>
-        </FocusList>
+            { 
+                reference: 'dotnetframework', 
+                value: '.NET Framework', 
+                focus: ['back-end', 'full-stack'],
+                from: from,
+                to: to
+            },
+            { 
+                reference: 'agile', 
+                value: 'Agile', 
+                focus: ['cross-functional'],
+                from: from,
+                to: to 
+            },
+            { 
+                reference: 'aspnetwebforms', 
+                acronym: 'ASP.NET WebForms', 
+                value: 'Active Server Pages .NET WebForms', 
+                focus: ['back-end', 'full-stack'],
+                from: from,
+                to: to 
+            },
+            {
+                reference: 'ado',
+                acronym: 'ADO',
+                value: 'Azure DevOps',
+                focus: ['infrastructure'],
+                from: from,
+                to: to
+            },
+            {
+                reference: 'adoagents',
+                acronym: 'ADO Agents',
+                value: 'Azure DevOps Agents',
+                focus: ['infrastructure'],
+                from: from,
+                to: to
+            },
+            {
+                reference: 'adopipelines',
+                acronym: 'ADO Pipelines',
+                value: 'Azure DevOps Pipelines',
+                focus: ['infrastructure'],
+                from: from,
+                to: to
+            },
+            {
+                reference: 'adoreleases',
+                acronym: 'ADO Releases',
+                value: 'Azure DevOps Releases',
+                focus: ['infrastructure'],
+                from: from,
+                to: to
+            },
+            { 
+                reference: 'bootstrap', 
+                value: 'Bootstrap', 
+                focus: ['front-end', 'full-stack'],
+                from: from,
+                to: to
+            },
+            { 
+                reference: 'csharp', 
+                value: 'C#', 
+                focus: ['back-end', 'full-stack'],
+                from: from,
+                to: to
+            },
+            { 
+                reference: 'chrome',
+                value: 'Chrome',
+                focus: ['infrastructure'],
+                from: from,
+                to: to
+            },
+            { 
+                reference: 'cicd', 
+                acronym: 'CI/CD', 
+                value: 'Continuous Integration/Continuous Deployment', 
+                focus: ['infrastructure'],
+                from: from,
+                to: to
+            },
+            { 
+                reference: 'css', 
+                acronym: 'CSS', 
+                value: 'Cascading Style Sheets', 
+                focus: ['front-end', 'full-stack'],
+                from: from,
+                to: to
+            },
+            { 
+                reference: 'datatables', 
+                value: 'DataTables', 
+                focus: ['front-end', 'full-stack'],
+                from: from,
+                to: to
+            },
+            { 
+                reference: 'edge', 
+                value: 'Edge', 
+                focus: ['infrastructure'],
+                from: from,
+                to: to
+            },
+            { 
+                reference: 'erd', 
+                acronym: 'ERD', 
+                value: 'Entity-Relationship Diagram', 
+                focus: ['back-end', 'full-stack'],
+                from: from,
+                to: to
+            },
+            {
+                reference: 'firefox',
+                value: 'Firefox',
+                focus: ['infrastructure'],
+                from: from,
+                to: to
+            },
+            { 
+                reference: 'git', 
+                value: 'Git', 
+                focus: ['infrastructure'],
+                from: from,
+                to: to
+            },
+            { 
+                reference: 'html', 
+                acronym: 'HTML', 
+                value: 'HyperText Markup Language', 
+                focus: ['front-end', 'full-stack'],
+                from: from,
+                to: to
+            },
+            { 
+                reference: 'ie',
+                acronym: 'IE', 
+                value: 'Internet Explorer', 
+                focus: ['infrastructure'],
+                from: from,
+                to: to
+            },
+            { 
+                reference: 'iis', 
+                acronym: 'IIS', 
+                value: 'Internet Information Services', 
+                focus: ['infrastructure'],
+                from: from,
+                to: to
+            },
+            { 
+                reference: 'jquery', 
+                value: 'jQuery', 
+                focus: ['front-end', 'full-stack'],
+                from: from,
+                to: to
+            },
+            { 
+                reference: 'js', 
+                acronym: 'JS', 
+                value: 'JavaScript', 
+                focus: ['front-end', 'back-end', 'full-stack'],
+                from: from,
+                to: to
+            },
+            { 
+                reference: 'linq', 
+                acronym: 'LINQ', 
+                value: 'Language Integrated Query', 
+                focus: ['back-end', 'full-stack'],
+                from: from,
+                to: to
+            },
+            {
+                reference: 'oop',
+                acronym: 'OOP',
+                value: 'Object-Oriented Programming',
+                focus: ['back-end', 'full-stack'],
+                from: from,
+                to: to
+            },
+            { 
+                reference: 'powershell', 
+                value: 'PowerShell', 
+                focus: ['back-end', 'full-stack', 'infrastructure'],
+                from: from,
+                to: to 
+            },
+            {
+                reference: 'rest',
+                acronym: 'REST',
+                value: 'Representational State Transfer', 
+                focus: ['front-end', 'back-end', 'full-stack'],
+                from: from,
+                to: to
+            },
+            {
+                reference: 'scrum',
+                value: 'Scrum',
+                focus: ['cross-functional'],
+                from: from,
+                to: to
+            },
+            { 
+                reference: 'sql', 
+                acronym: 'SQL', 
+                value: 'Structured Query Language', 
+                focus: ['back-end', 'full-stack'],
+                from: from,
+                to: to 
+            },
+            { 
+                reference: 'sqlserver', 
+                value: 'SQL Server', 
+                focus: ['infrastructure'],
+                from: from,
+                to: to 
+            },
+            { 
+                reference: 'vs', 
+                acronym: 'VS',
+                value: 'Visual Studio', 
+                focus: ['front-end', 'back-end', 'full-stack'],
+                from: from,
+                to: to 
+            },
+            { 
+                reference: 'vscode', 
+                acronym: 'VS Code', 
+                value: 'Visual Studio Code', 
+                focus: ['front-end', 'back-end', 'full-stack'],
+                from: from,
+                to: to 
+            },
+            {
+                reference: 'webapi',
+                acronym: 'WebAPI',
+                value: 'Web Application Programming Interface',
+                focus: ['back-end', 'full-stack'],
+                from: from,
+                to: to
+            },
+            { 
+                reference: 'wetboew', 
+                acronym: 'WET-BOEW', 
+                value: 'Web Experience Toolkit', 
+                focus: ['front-end', 'full-stack'],
+                from: from,
+                to: to 
+            },
+            {
+                reference: 'wcag',
+                acronym: 'WCAG',
+                value: 'Web Content Accessibility Guidelines',
+                focus: ['front-end', 'full-stack'],
+                from: from,
+                to: to 
+            },
+            { 
+                reference: 'windowsserver', 
+                value: 'Windows Server', 
+                focus: ['infrastructure'],
+                from: from,
+                to: to 
+            },
+            { 
+                reference: 'xml', 
+                acronym: 'XML', 
+                value: 'Extensible Markup Language', 
+                focus: ['back-end', 'full-stack'],
+                from: from,
+                to: to 
+            }
+        ]">
+        <template v-slot:description>
+            <p>
+                For brevity, description of this system is unchanged from the aforementioned iCARE (Modernization) project.
+            </p>
+        </template>
+        <template v-slot:initiative>
+            <p>
+                Replace the deprecated system, <Term reference="icams" acronym="iCAMS" 
+                value="Immigration Contribution Agreement Management System"></Term>, with a replacement system that 
+                supported the current data capture needs of the client.
+            </p>
+        </template>
+        <template v-slot:accomplishments>
+            <ul>
+                <li>Decommissioned the <Term reference="icams" acronym="iCAMS" 
+                    value="Immigration Contribution Agreement Management System"></Term> system.</li>
+                <li>Architected the main concepts of the system.</li>
+                <li>Designed the bulk-upload mechanism.</li>
+                <li>Influenced the adoption of <Term reference="agile" value="Agile"></Term> methodology.</li>
+            </ul>
+        </template>
     </System>
 </template>
 
-<style scoped>
-</style>
+<style scoped></style>        

@@ -1,107 +1,206 @@
 <script setup lang="ts">
-import FocusItem from '../../layout/FocusItem.vue';
-import FocusList from '../../layout/FocusList.vue';
-import System from '../../layout/System.vue';
+import System from '../../layout/System2.vue';
 import Term from '../../layout/Term.vue';
+import { ref } from 'vue';
+
+const from = ref<Date>(new Date("2012-11-01T00:00:00.000-05:00"));
+const to = ref<Date>(new Date("2014-01-01T00:00:00.000-05:00"));
+const options: { month: 'short', year: 'numeric' } = { 
+    month: 'short', 
+    year: 'numeric'
+};
 </script>
 
 <template>
     <System 
         id="iLove"
         name="iLOVE"
-        from="Nov. 2012"
-        to="Jan. 2014"
+        :from="from.toLocaleDateString('en-CA', options)"
+        :to="to.toLocaleDateString('en-CA', options)"
         :technologies="[
             { 
-                reference: 'html',
-                acronym: 'HTML',
-                value: 'HyperText Markup Language' 
-            }, 
+                reference: 'dotnetframework', 
+                value: '.NET Framework', 
+                focus: ['back-end', 'full-stack'],
+                from: from,
+                to: to
+            },
             { 
-                reference: 'css',
-                acronym: 'CSS',
-                value: 'Cascading Style Sheets' 
-            }, 
+                reference: 'aspnetwebforms', 
+                acronym: 'ASP.NET WebForms', 
+                value: 'Active Server Pages .NET WebForms', 
+                focus: ['front-end', 'back-end', 'full-stack'],
+                from: from,
+                to: to 
+            },
             { 
-                reference: 'js',
-                acronym: 'JS',
-                value: 'JavaScript'
-            }, 
+                reference: 'bootstrap', 
+                value: 'Bootstrap', 
+                focus: ['front-end', 'full-stack'],
+                from: from,
+                to: to
+            },
             { 
-                reference: 'csharp',
-                value: 'C#' 
-            }, 
+                reference: 'csharp', 
+                value: 'C#', 
+                focus: ['back-end', 'full-stack'],
+                from: from,
+                to: to
+            },
             { 
-                reference: 'wetboew',
-                acronym: 'WET-BOEW',
-                value: 'Web Experience Toolkit' 
-            }, 
+                reference: 'chrome',
+                value: 'Chrome',
+                focus: ['infrastructure'],
+                from: from,
+                to: to
+            },
+            { 
+                reference: 'css', 
+                acronym: 'CSS', 
+                value: 'Cascading Style Sheets', 
+                focus: ['front-end', 'full-stack'],
+                from: from,
+                to: to
+            },
+            {
+                reference: 'firefox',
+                value: 'Firefox',
+                focus: ['infrastructure'],
+                from: from,
+                to: to
+            },
+            { 
+                reference: 'html', 
+                acronym: 'HTML', 
+                value: 'HyperText Markup Language', 
+                focus: ['front-end', 'full-stack'],
+                from: from,
+                to: to
+            },
+            { 
+                reference: 'ie', 
+                acronym: 'IE',
+                value: 'Internet Explorer', 
+                focus: ['infrastructure'],
+                from: from,
+                to: to
+            },
+            { 
+                reference: 'iis', 
+                acronym: 'IIS', 
+                value: 'Internet Information Services', 
+                focus: ['infrastructure'],
+                from: from,
+                to: to
+            },
+            { 
+                reference: 'jqurey', 
+                value: 'jQuery',  
+                focus: ['front-end', 'full-stack'],
+                from: from,
+                to: to
+            },
+            { 
+                reference: 'js', 
+                acronym: 'JS', 
+                value: 'JavaScript', 
+                focus: ['front-end', 'back-end', 'full-stack'],
+                from: from,
+                to: to
+            },
+            { 
+                reference: 'linq', 
+                acronym: 'LINQ', 
+                value: 'Language Integrated Query', 
+                focus: ['back-end', 'full-stack'],
+                from: from,
+                to: to
+            },
+            { 
+                reference: 'sql', 
+                acronym: 'SQL', 
+                value: 'Structured Query Language', 
+                focus: ['back-end', 'full-stack'],
+                from: from,
+                to: to 
+            },
+            { 
+                reference: 'sqlserver', 
+                value: 'SQL Server', 
+                focus: ['infrastructure'],
+                from: from,
+                to: to 
+            },
             { 
                 reference: 'tfs',
-                acronym: 'TFS',
-                value: 'Team Foundation Server' 
-            }, 
+                acronym: 'TFS', 
+                value: 'Team Foundation Server', 
+                focus: ['infrastructure'],
+                from: from,
+                to: to 
+            },
             { 
-                reference: 'vs',
-                acronym: 'VS', 
-                value: 'Visual Studio' 
-            }, 
+                reference: 'vs', 
+                acronym: 'VS',
+                value: 'Visual Studio', 
+                focus: ['front-end', 'back-end', 'full-stack'],
+                from: from,
+                to: to 
+            },
             { 
-                reference: 'asp',
-                acronym: 'ASP',
-                value: 'Active Server Pages' 
-            }, 
+                reference: 'vsts', 
+                acronym: 'VSTS', 
+                value: 'Visual Studio Team Services', 
+                focus: ['infrastructure'],
+                from: from,
+                to: to 
+            },
+            { 
+                reference: 'wetboew', 
+                acronym: 'WET-BOEW', 
+                value: 'Web Experience Toolkit', 
+                focus: ['front-end', 'full-stack'],
+                from: from,
+                to: to 
+            },
             {
-                reference: 'dotnet', 
-                value: '.NET' 
+                reference: 'wcag',
+                acronym: 'WCAG',
+                value: 'Web Content Accessibility Guidelines',
+                focus: ['front-end', 'full-stack'],
+                from: from,
+                to: to 
+            },
+            { 
+                reference: 'windowsserver', 
+                value: 'Windows Server', 
+                focus: ['infrastructure'],
+                from: from,
+                to: to 
             }
         ]">
-        <FocusList>
-            <FocusItem>Established essential development tools for the team, including <Term reference="vs" acronym="VS"
-                value="Visual Studio"></Term> and <Term reference="tfs" acronym="TFS" value="Team Foundation Server">                    
-                </Term>, to enhance project workflows.</FocusItem>
-            <FocusItem>Directed the technology stack, including <Term reference="csharp" value="C#"></Term> and <Term 
-                reference="aspnet" acronym="ASP.NET" value="Active Server Pages .NET"></Term>, for efficient and scalable 
-                application development.</FocusItem>
-            <FocusItem>Collaborated with developers on technology stack, development processes, and system functionalities
-                to foster team alignment.</FocusItem>
-            <FocusItem>Implemented good development practices, including gated builds for code stability and conflict
-                resolution.</FocusItem>
-            <FocusItem>Created and maintained <Term reference="vsts" acronym="VSTS" value="Visual Studio Team Services">
-                </Term> publish builds for <Term reference="ci" acronym="CI" value="Continuous Integration"></Term>, 
-                enabling seamless deployment into <Term reference="npe" acronym="NPEs" 
-                value="Non-Production Environments"></Term>.</FocusItem>
-            <FocusItem>Configured and maintained <Term reference="npe" acronym="NPEs" 
-                value="Non-Production Environments"></Term> infrastructure for system hosting and managed the build server
-                environment running <Term reference="tfs" acronym="TFS" value="Team Foundation Server"></Term> <Term 
-                reference="vsts" acronym="VSTS" value="Visual Studio Team Services"></Term>.</FocusItem>
-            <FocusItem>Participated in pair-programming sessions to address development challenges and share knowledge.
-            </FocusItem>
-            <FocusItem>Conducted technical assessments on business requirements, providing effort estimates and proposed
-                approaches.</FocusItem>
-            <FocusItem>Collaborated with team lead, product owner, and business analyst to prioritize new development tasks
-                and bug fixes effectively.</FocusItem>
-            <FocusItem>Prepared deliverables for production release, identifying and securing necessary resources for
-                successful deployment.</FocusItem>
-            <FocusItem>Actively participated in the release process to ensure smooth and timely product launches.
-            </FocusItem>
-            <FocusItem>Promoted <Term reference="agile" value="Agile"></Term> development practices, introducing team 
-                members to <Term reference="agile" value="Agile"></Term> methodologies and fostering
-                iterative progress.</FocusItem>
-            <FocusItem>Defined and implemented a robust, scalable technology stack for development projects to ensure
-                long-term maintainability.</FocusItem>
-            <FocusItem>Built system architecture prototypes, showcasing dynamic software solutions aligned with business
-                requirements.</FocusItem>
-            <FocusItem>Provided production support for web applications to maintain operational stability and performance.
-            </FocusItem>
-            <FocusItem>Collaborated closely with clients to gather specifications, address technical issues, and ensure
-                solutions met business objectives.</FocusItem>
-            <FocusItem>Proposed, justified, and implemented <Term reference="tfs" acronym="TFS" 
-                value="Team Foundation Server"></Term> for code management and established a <Term reference="tfs" 
-                acronym="TFS" value="Team Foundation Server"></Term> build server for streamlined development processes.
-            </FocusItem>
-        </FocusList>
+        <template v-slot:description>
+            <p>
+                The <term reference="ilove" acronym="iLOVE" value="Immigration Language Online Verification Environment">
+                </term> was an interface to allow officers to be able to issue queries against the data collected in the 
+                <Term reference="icare" acronym="iCARE" value="Immigration Contribution Agreement Reporting Environment">
+                </Term> and <Term reference="icams" acronym="iCAMS" 
+                value="Immigration Contribution Agreement Management System"></Term> systems to verify if an individual 
+                has been confirmed to have met their language requirements as reported by <Term reference="spo"
+                acronym="SPOs" value="Service Provider Organizations"></Term>. 
+            </p>
+        </template>
+        <template v-slot:initiative>
+            <p>
+                Develop an interface with the insights required into a client's language assessment data.
+            </p>
+        </template>
+        <template v-slot:accomplishments>
+            <ul>
+                <li>Built and deployed the solution within a limited timeframe.</li>
+            </ul>
+        </template>
     </System>
 </template>
 
-<style scoped></style>
+<style scoped></style>        

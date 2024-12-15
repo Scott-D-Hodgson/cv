@@ -25,7 +25,7 @@ const darkMode = useDarkMode();
 <template>
     <div>
         <div :class="darkMode.isOn() ? 'bg-dark' : 'bg-light'">
-            <div :id="props.id" class="row">
+            <div :id="props.id" class="row mt-3">
                 <div class="col-12 col-md-8">
                     <h3 class="h4 mb-0">
                         {{ props.name }}
@@ -51,14 +51,12 @@ const darkMode = useDarkMode();
         </div>
         <div class="row">
             <div class="col-12">
-                <p class="m-0">
-                    <h4 class="h6">Description</h4>
-                    <slot name="description"></slot>
-                    <h4 class="h6">Initiative</h4>
-                    <slot name="initiative"></slot>
-                    <h4 class="h6">Accomplishments</h4>
-                    <slot name="accomplishments"></slot>
-                </p>
+                <h4 class="h6">Description</h4>
+                <slot name="description"></slot>
+                <h4 class="h6">Initiative</h4>
+                <slot name="initiative"></slot>
+                <h4 class="h6">Accomplishments</h4>
+                <slot name="accomplishments"></slot>
             </div>
         </div>
     </div>

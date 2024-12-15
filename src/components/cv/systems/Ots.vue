@@ -1,68 +1,125 @@
 <script setup lang="ts">
-import FocusList from '../../layout/FocusList.vue';
-import FocusItem from '../../layout/FocusItem.vue';
-import System from '../../layout/System.vue';
+import System from '../../layout/System2.vue';
 import Term from '../../layout/Term.vue';
+import { ref } from 'vue';
+
+const from = ref<Date>(new Date("2004-01-01T00:00:00.000-05:00"));
+const to = ref<Date>(new Date("2010-02-01T00:00:00.000-05:00"));
+const fromOptions: { year: 'numeric' } = { 
+    year: 'numeric'
+};
+const toOptions: { month: 'short', year: 'numeric' } = { 
+    month: 'short', 
+    year: 'numeric'
+};
 </script>
 
 <template>
     <System 
         id="Ots"
         name="OTS"
-        from="2004" 
-        to="Feb. 2010"
+        :from="from.toLocaleDateString('en-CA', fromOptions)"
+        :to="to.toLocaleDateString('en-CA', toOptions)"
         :technologies="[
             { 
-                reference: 'sybase',
-                value: 'Sybase' 
+                reference: 'access', 
+                value: 'Access', 
+                focus: ['back-end', 'full-stack'],
+                from: from,
+                to: to
+            },
+            { 
+                reference: 'crystalreports', 
+                value: 'Crystal Reports', 
+                focus: ['back-end', 'full-stack'],
+                from: from,
+                to: to
+            },
+            { 
+                reference: 'installshield', 
+                value: 'InstallShield', 
+                focus: ['infrastructure'],
+                from: from,
+                to: to
+            },
+            { 
+                reference: 'msi', 
+                acronym: 'MSI', 
+                value: 'Microsoft Installer', 
+                focus: ['infrastructure'],
+                from: from,
+                to: to
+            },
+            {
+                reference: 'oop',
+                acronym: 'OOP',
+                value: 'Object-Oriented Programming',
+                focus: ['back-end', 'full-stack'],
+                from: from,
+                to: to
+            },
+            { 
+                reference: 'sql', 
+                acronym: 'SQL', 
+                value: 'Structured Query Language', 
+                focus: ['back-end', 'full-stack'],
+                from: from,
+                to: to 
+            },
+            { 
+                reference: 'sybase', 
+                value: 'Sybase', 
+                focus: ['back-end', 'full-stack'],
+                from: from,
+                to: to 
             },
             { 
                 reference: 'vb6',
                 acronym: 'VB6', 
-                value: 'Visual Basic 6' 
+                value: 'Visual Basic 6', 
+                focus: ['front-end', 'back-end', 'full-stack'],
+                from: from,
+                to: to 
             },
             { 
-                reference: 'crystalreports',
-                value: 'Crystal Reports' 
-            },
-            { 
-                reference: 'installshield',
-                value: 'InstallShield' 
-            },
-            { 
-                reference: 'vss',
+                reference: 'vss', 
                 acronym: 'VSS', 
-                value: 'Visual SourceSafe' 
+                value: 'Visual SourceSafe', 
+                focus: ['infrastructure'],
+                from: from,
+                to: to 
             },
             { 
-                reference: 'windows',
-                value: 'Windows' 
+                reference: 'windows', 
+                value: 'Windows', 
+                focus: ['infrastructure'],
+                from: from,
+                to: to 
             }
         ]">
-        <FocusList>
-            <FocusItem>Leveraged prior development experience to create a modular framework for streamlined reuse across
-                applications.</FocusItem>
-            <FocusItem>Designed database structure and stored procedures to support the modular framework's adaptable
-                architecture.</FocusItem>
-            <FocusItem>Developed a database schema conversion script to transition existing data into the new modular
-                structure within the <Term reference="sybase" value="Sybase"></Term> <Term reference="rdbms" 
-                acronym="RDBMS" value="Relational Database Management System"></Term>.</FocusItem>
-            <FocusItem>Built a <Term reference="vb6" acronym="VB6" value="Visual Basic 6"></Term> application to offer a 
-                user-friendly interface, optimizing data management efficiency.
-            </FocusItem>
-            <FocusItem>Configured and prepared an <Term reference="installshield" value="InstallShield"></Term> <Term 
-                reference="msi" acronym="MSI" value="MicroSoft Installer"></Term> package for smooth desktop application
-                deployment.</FocusItem>
-            <FocusItem>Utilized <Term reference="vss" acronym="VSS" value="Visual SourceSafe"></Term> for source code 
-                version control, ensuring adherence to team protocols for code integrity.
-            </FocusItem>
-            <FocusItem>Expanded expertise through innovation in reusable application design, focusing on modularity and
-                shared elements.</FocusItem>
-            <FocusItem>Awarded a bronze medal at the <Term reference="gtec" acronym="GTEC" 
-                value="Government Technology Exhibition and Conference"></Term> conference for the Shared Development 
-                Framework approach, showcasing modular application design.</FocusItem>
-        </FocusList>
+        <template v-slot:description>
+            <p>
+                The <Term reference="ots" acronym="OTS" value="Outreach Tracking System"></Term> was the anonymized
+                case management tool used by the department's Ombudsman to track the generalized statistics of the 
+                types of issues/cases being handled by the office.
+            </p>
+        </template>
+        <template v-slot:initiative>
+            <p>
+                Upgrade the technology of the system to current standard of <Term reference="vb6" acronym="VB6" 
+                value="Visual Basic 6"></Term> for desktop applications.
+            </p>
+        </template>
+        <template v-slot:accomplishments>
+            <ul>
+                <li>Built an abstraction layer separate from the specific requirements of the application, named 
+                    the shared development framework.</li>
+                <li>Shared development framework resulted in a bronze award at the 2006 <Term reference="gtec" 
+                    acronym="GTEC" value="Government Technology Exhibition and Conference"></Term> Award 
+                    Ceremonies.</li>
+            </ul>
+        </template>
     </System>
 </template>
 
-<style scoped></style>
+<style scoped></style>        
