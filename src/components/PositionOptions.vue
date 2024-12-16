@@ -131,7 +131,7 @@ const systemClick = (index: number) => {
 const buttonClick = (action: string) => {
     expanded.value = null;
     switch (action) {
-        case 'FlavorText':
+        case 'FlavourText':
             scroll('#FlavourTextSection');
             break;
         case 'Technologies':
