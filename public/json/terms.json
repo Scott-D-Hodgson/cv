@@ -8,8 +8,8 @@
         "file": "ajax.md"
     },
     {
-        "ref": "alm",
-        "file": "alm.md"
+        "ref": "dotnetcore",
+        "file": "dotnetcore.md"
     },
     {
         "ref": "api",
@@ -20,52 +20,44 @@
         "file": "aspnet.md"
     },
     {
-        "ref": "azuredevops",
-        "file": "azuredevops.md"
+        "ref": "ado",
+        "file": "ado.md"
     },
     {
-        "ref": "azurepipelines",
-        "file": "azurepipelines.md"
+        "ref": "adoagents",
+        "file": "adoagents.md"
     },
     {
-        "ref": "azurereleases",
-        "file": "azurereleases.md"
+        "ref": "adopipelines",
+        "file": "adopipelines.md"
     },
     {
-        "ref": "ba",
-        "file": "ba.md"
-    },
-    {
-        "ref": "be",
-        "file": "be.md"
+        "ref": "adoreleases",
+        "file": "adoreleases.md"
     },
     {
         "ref": "bootstrap",
         "file": "bootstrap.md"
     },
     {
-        "ref": "buildagent",
-        "file": "buildagent.md"
-    },
-    {
-        "ref": "cd",
-        "file": "cd.md"
+        "ref": "csharp",
+        "file": "csharp.md"
     },
     {
         "ref": "chartjs",
         "file": "chartjs.md"
     },
     {
-        "ref": "ci",
-        "file": "ci.md"
+        "ref": "chrome",
+        "file": "chrome.md"
     },
     {
-        "ref": "crm",
-        "file": "crm.md"
+        "ref": "cicd",
+        "file": "cidi.md"
     },
     {
-        "ref": "csharp",
-        "file": "csharp.md"
+        "ref": "ckeditor",
+        "file": "ckeditor.md"
     },
     {
         "ref": "css",
@@ -76,20 +68,8 @@
         "file": "datatables.md"
     },
     {
-        "ref": "db",
-        "file": "db.md"
-    },
-    {
-        "ref": "developer",
-        "file": "developer.md"
-    },
-    {
-        "ref": "docker",
-        "file": "docker.md"
-    },
-    {
-        "ref": "dotnet",
-        "file": "dotnet.md"
+        "ref": "edge",
+        "file": "edge.md"
     },
     {
         "ref": "ef",
@@ -100,16 +80,12 @@
         "file": "erd.md"
     },
     {
-        "ref": "fe",
-        "file": "fe.md"
+        "ref": "firefox",
+        "file": "firefox.md"
     },
     {
         "ref": "fontawesome",
         "file": "fontawesome.md"
-    },
-    {
-        "ref": "gatedcheckin",
-        "file": "gatedcheckin.md"
     },
     {
         "ref": "gherkin",
@@ -120,20 +96,12 @@
         "file": "git.md"
     },
     {
-        "ref": "github",
-        "file": "github.md"
-    },
-    {
-        "ref": "goc",
-        "file": "goc.md"
+        "ref": "gwt",
+        "file": "gwt.md"
     },
     {
         "ref": "html",
         "file": "html.md"
-    },
-    {
-        "ref": "hugo",
-        "file": "hugo.md"
     },
     {
         "ref": "i18next",
@@ -144,10 +112,6 @@
         "file": "iis.md"
     },
     {
-        "ref": "ircc",
-        "file": "ircc.md"
-    },
-    {
         "ref": "js",
         "file": "js.md"
     },
@@ -156,139 +120,19 @@
         "file": "json.md"
     },
     {
+        "ref": "jwt",
+        "file": "jwt.md"
+    },
+    {
         "ref": "linq",
         "file": "linq.md"
-    },
-    {
-        "ref": "linux",
-        "file": "linux.md"
-    },
-    {
-        "ref": "lodash",
-        "file": "lodash.md"
     },
     {
         "ref": "mvc",
         "file": "mvc.md"
     },
     {
-        "ref": "nodejs",
-        "file": "nodejs.md"
-    },
-    {
-        "ref": "npe",
-        "file": "npe.md"
-    },
-    {
-        "ref": "npm",
-        "file": "npm.md"
-    },
-    {
-        "ref": "nuget",
-        "file": "nuget.md"
-    },
-    {
-        "ref": "oauth",
-        "file": "oauth.md"
-    },
-    {
-        "ref": "powershell",
-        "file": "powershell.md"
-    },
-    {
-        "ref": "pr",
-        "file": "pr.md"
-    },
-    {
-        "ref": "qa",
-        "file": "qa.md"
-    },
-    {
-        "ref": "rest",
-        "file": "rest.md"
-    },
-    {
-        "ref": "rpios",
-        "file": "rpios.md"
-    },
-    {
-        "ref": "selenium",
-        "file": "selenium.md"
-    },
-    {
-        "ref": "specflow",
-        "file": "specflow.md"
-    },
-    {
-        "ref": "sql",
-        "file": "sql.md"
-    },
-    {
-        "ref": "sqlserver",
-        "file": "sqlserver.md"
-    },
-    {
-        "ref": "ssc",
-        "file": "ssc.md"
-    },
-    {
-        "ref": "tdss",
-        "file": "tdss.md"
-    },
-    {
-        "ref": "tester",
-        "file": "tester.md"
-    },
-    {
-        "ref": "tfs",
-        "file": "tfs.md"
-    },
-    {
-        "ref": "tl",
-        "file": "tl.md"
-    },
-    {
-        "ref": "ts",
-        "file": "ts.md"
-    },
-    {
-        "ref": "ubuntu",
-        "file": "ubuntu.md"
-    },
-    {
-        "ref": "vuejs",
-        "file": "vuejs.md"
-    },
-    {
-        "ref": "vite",
-        "file": "vite.md"
-    },
-    {
-        "ref": "vs",
-        "file": "vs.md"
-    },
-    {
-        "ref": "vscode",
-        "file": "vscode.md"
-    },
-    {
-        "ref": "websolutions",
-        "file": "websolutions.md"
-    },
-    {
-        "ref": "wetboew",
-        "file": "wetboew.md"
-    },
-    {
-        "ref": "windows",
-        "file": "windows.md"
-    },
-    {
-        "ref": "xml",
-        "file": "xml.md"
-    },
-    {
-        "ref": "yaml",
-        "file": "yaml.md"
+        "ref": "nlog",
+        "file": "nlog.md"
     }
 ]
