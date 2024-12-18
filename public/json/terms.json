@@ -134,5 +134,121 @@
     {
         "ref": "nlog",
         "file": "nlog.md"
+    },
+    {
+        "ref": "node",
+        "file": "node.md"
+    },
+    {
+        "ref": "npm",
+        "file": "npm.md"
+    },
+    {
+        "ref": "nuget",
+        "file": "nuget.md"
+    },
+    {
+        "ref": "oauth",
+        "file": "oauth.md"
+    },
+    {
+        "ref": "oop",
+        "file": "oop.md"
+    },
+    {
+        "ref": "powershell",
+        "file": "powershell.md"
+    },
+    {
+        "ref": "razorpages",
+        "file": "razorpages.md"
+    },
+    {
+        "ref": "rest",
+        "file": "rest.md"
+    },
+    {
+        "ref": "sass",
+        "file": "sass.md"
+    },
+    {
+        "ref": "scrum",
+        "file": "scrum.md"
+    },
+    {
+        "ref": "selenium",
+        "file": "selenium.md"
+    },
+    {
+        "ref": "specflow",
+        "file": "specflow.md"
+    },
+    {
+        "ref": "sql",
+        "file": "sql.md"
+    },
+    {
+        "ref": "sqlserver",
+        "file": "sqlserver.md"
+    },
+    {
+        "ref": "tap",
+        "file": "tap.md"
+    },
+    {
+        "ref": "ts",
+        "file": "ts.md"
+    },
+    {
+        "ref": "vite",
+        "file": "vite.md"
+    },
+    {
+        "ref": "vs",
+        "file": "vs.md"
+    },
+    {
+        "ref": "vscode",
+        "file": "vscode.md"
+    },
+    {
+        "ref": "vue",
+        "file": "vue.md"
+    },
+    {
+        "ref": "wcag",
+        "file": "wcag.md"
+    },
+    {
+        "ref": "webapi",
+        "file": "webapi.md"
+    },
+    {
+        "ref": "webdriver",
+        "file": "webdriver.md"
+    },
+    {
+        "ref": "wetboew",
+        "file": "wetboew.md"
+    },
+    {
+        "ref": "windows",
+        "file": "windows.md"
+    },
+    {
+        "ref": "windowsserver",
+        "file": "windowsserver.md"
+    },
+    {
+        "ref": "xml",
+        "file": "xml.md"
+    },
+    {
+        "ref": "xunit",
+        "file": "xunit.md"
+    },
+    {
+        "ref": "yaml",
+        "file": "yaml.md"
     }
 ]
