@@ -9,8 +9,12 @@ export interface ITerm {
 
 const terms = ref<ITerm[]>([]);
 
-(
-    async () => {
+export function useTerms() {
+
+    const init = async () => {
+        if (terms.value.length > 0) {
+            return;
+        };
         let response = await fetch('/json/terms.json', {
             method: 'GET',
             headers: {
@@ -22,12 +26,10 @@ const terms = ref<ITerm[]>([]);
         };
         let json = await response.json();
         terms.value = json;
-    }
-)();
-
-export function useTerms() {
+    };
 
     const get = async (reference: string): Promise<ITerm | null> => {
+        await init();
         let term = terms.value.find(term => {
             return term.ref === reference;
         }); 
@@ -37,7 +39,7 @@ export function useTerms() {
         if (term.content) {
             return term;
         };
-        let response = await fetch(`/md/${term.file}`, {
+        let response = await fetch(`/md/terms/${term.file}`, {
             method: 'GET',
             headers: {
                 'Accept': 'application/text'
@@ -47,11 +49,18 @@ export function useTerms() {
             return term;
         };
         term.content = await response.text();
-        console.log(term.content);
         return term;
     };
 
+    const has = async (reference: string): Promise<boolean> => {
+        await init();
+        return (terms.value.findIndex(term => {
+            return term.ref === reference;
+        })) >= 0;
+    };
+
     return {
-        get
+        get,
+        has
     };
 };

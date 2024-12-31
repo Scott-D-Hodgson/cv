@@ -179,7 +179,6 @@ const subclasses = computed(() => {
 );
 
 const scroll = (selector: string) => {
-    console.log(selector);
     let elm = document.querySelector(selector);
     if (elm) {
         elm.scrollIntoView({

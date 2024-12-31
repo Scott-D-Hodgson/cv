@@ -1,15 +1,24 @@
 <script setup lang="ts">
-import Term from '../../layout/Term.vue';
+import CourseList from '../../layout/CourseList.vue';
 import Trainer from '../../layout/Trainer.vue';
+
+const courses = [
+    { 
+        reference: 'globalknowledgeado',
+        value: 'Azure DevOps',
+        date: '2020' 
+    }
+];
 </script>
 
 <template>
     <Trainer id="GlobalKnowledge">
         <template v-slot:provider>Global Knowledge</template>
-        <template v-slot:range>2020</template>
         <p>
-            <strong>Certificate:</strong>&nbsp;
-            <Term reference="globalknowledgecourseado" acronym="ADO" value="Azure DevOps"></Term>
+            <strong>Certificate:</strong>
+            <CourseList 
+                :courses="courses">
+            </CourseList>
         </p>
     </Trainer>
 </template>

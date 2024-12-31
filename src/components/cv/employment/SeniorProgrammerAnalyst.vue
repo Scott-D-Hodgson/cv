@@ -35,7 +35,7 @@ import Term from '../../layout/Term.vue';
         <FocusList>
             <FocusItem>Conceptualized and implemented a modular reporting system leveraging <Term 
                 reference="crystalreports" value="Crystal Reports"></Term>, decoupling report processing from 
-                applications, and delivering the <Term reference="s3-rs" acronym="S3-RS" 
+                applications, and delivering the <Term reference="s3rs" acronym="S3-RS" 
                 value="Shared System Services - Reporting Service"></Term> prototype.</FocusItem>
             <FocusItem>Authored complex <Term reference="sql" acronym="SQL" value="Structured Query Language">
                 </Term> queries and database views within <Term reference="sybase" value="Sybase"></Term> to 

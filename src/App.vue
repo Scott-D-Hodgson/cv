@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import CirriculumVitae from './components/CirriculumVitae.vue';
+import CourseModal from './components/modals/CourseModal.vue';
 import FocusModal from './components/modals/FocusModal.vue';
 import TermModal from './components/modals/TermModal.vue';
 import PositionOptions from './components/PositionOptions.vue';
@@ -12,6 +13,7 @@ const darkMode = useDarkMode();
 
 <template>
     <div class="overlay"></div>
+    <CourseModal></CourseModal>
     <TermModal></TermModal>
     <FocusModal></FocusModal>
     <div class="flex-container">

@@ -94,7 +94,7 @@ const options: { month: 'short', year: 'numeric' } = {
                 to: to
             },
             { 
-                reference: 'jqurey', 
+                reference: 'jquery', 
                 value: 'jQuery',  
                 focus: ['front-end', 'full-stack'],
                 from: from,
