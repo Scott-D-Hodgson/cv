@@ -60,7 +60,7 @@ import FocusList from '../../layout/FocusList.vue';
                     'cross-functional'
                 ]">
                 Worked closely with <Term reference="tl" acronym="TL" value="Team Lead"></Term>, <Term 
-                reference="productowner" value="Product Owner"></Term>, and <Term reference="ba" 
+                reference="po" acronym="PO" value="Product Owner"></Term>, and <Term reference="ba" 
                 acronym="BA" value="Business Analyst"></Term> to prioritize and triage development 
                 workload.
             </FocusItem>

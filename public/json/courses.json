@@ -1,0 +1,129 @@
+[
+    {
+        "ref": "globalknowledgeado",
+        "providerref": "globalknowledge",
+        "value": "Azure DevOps",
+        "date": "2020",
+        "file": "ado.md"
+    },
+    {
+        "ref": "learningtreecourseangular",
+        "providerref": "learningtree",
+        "value": "Introduction to Angular",
+        "code": "2324",
+        "date": "2016",
+        "file": "angular.md"
+    },
+    {
+        "ref": "learningtreecourseappledevelopment",
+        "providerref": "learningtree",
+        "value": "iPhone and iPad Application Development Introduction",
+        "code": "2761",
+        "date": "2012",
+        "file": "appledevelopment.md"
+    },
+    {
+        "ref": "learningtreecoursearchitecting",
+        "providerref": "learningtree",
+        "value": "Architecting Enterprise Applications",
+        "code": "4877",
+        "date": "2015",
+        "file": "architecting.md"
+    },
+    {
+        "ref": "learningtreecourseassertivecommunication",
+        "providerref": "learningtree",
+        "value": "Assertive Communication Skills Training",
+        "code": "244",
+        "date": "2015",
+        "file": "assertivecommunication.md"
+    },
+    {
+        "ref": "learningtreecourseaspnetcore",
+        "providerref": "learningtree",
+        "value": "ASP.NET Learning CORE & CORE 7 for ASP.NET MVC Developers Training",
+        "code": "2622",
+        "date": "2019",
+        "file": "aspnetcore.md"
+    },
+    {
+        "ref": "learningtreecourseawsdevelopment",
+        "providerref": "learningtree",
+        "value": "Developing on AWS",
+        "code": "1227",
+        "date": "2024",
+        "file": "awsdevelopment.md"
+    },
+    {
+        "ref": "learningtreecourseblazor",
+        "providerref": "learningtree",
+        "value": "Blazor Course: Building Web Applications",
+        "code": "2326",
+        "date": "2023",
+        "file": "blazor.md"
+    },
+    {
+        "ref": "learningtreecoursedocker",
+        "providerref": "learningtree",
+        "value": "Introduction to Docker Training",
+        "code": "3659",
+        "date": "2023",
+        "file": "docker.md"
+    },
+    {
+        "ref": "learningtreecourseiis",
+        "providerref": "learningtree",
+        "value": "Hands-On Internet Information Services 5 for Windows 2000",
+        "code": "563",
+        "date": "2003",
+        "file": "iis.md"
+    },
+    {
+        "ref": "learningtreecoursejavaspringhibernate",
+        "providerref": "learningtree",
+        "value": "Developing Modern Enterprise Java Applications Using Spring Training",
+        "code": "517",
+        "date": "2010",
+        "file": "javaspringhibernate.md"
+    },
+    {
+        "ref": "learningtreecourselinq",
+        "providerref": "learningtree",
+        "value": "Introduction to Language Integrated Query (LINQ)",
+        "code": "4650",
+        "date": "2015",
+        "file": "linq.md"
+    },
+    {
+        "ref": "learningtreecoursereact",
+        "providerref": "learningtree",
+        "value": "Building Web Applications with React 16",
+        "code": "2322",
+        "date": "2023",
+        "file": "react.md"
+    },
+    {
+        "ref": "learningtreecoursesecuringwindows",
+        "providerref": "learningtree",
+        "value": "Securing Windows 2000: Hands-On",
+        "code": "562",
+        "date": "2003",
+        "file": "securingwindows.md"
+    },
+    {
+        "ref": "learningtreecoursewebforms",
+        "providerref": "learningtree",
+        "value": "ASP.NET WebForms: A Comprehensive Hands-On Introduction",
+        "code": "512",
+        "date": "2010",
+        "file": "webforms.md"
+    },
+    {
+        "ref": "learningtreecoursewebservices",
+        "providerref": "learningtree",
+        "value": ".NET Web Services: WCF, Web API, gPRC, and SignalR",
+        "code": "2601",
+        "date": "2015",
+        "file": "webservices.md"
+    }
+]

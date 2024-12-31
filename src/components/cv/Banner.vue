@@ -10,13 +10,12 @@
                 </p>
                 <p>
                     Current to-do list:
-                    <ul>
-                        <li>Complete term information content.</li>
-                        <li>Expand menu label text responsively on wider screens.</li>
-                        <li>Initialize on dark-mode pattern and fade into colour.</li>
-                        <li>Perform full accessibility evaluation and update.</li>
-                    </ul>
                 </p>
+                <ul>
+                    <li>Expand menu label text responsively on wider screens.</li>
+                    <li>Initialize on dark-mode pattern and fade into colour.</li>
+                    <li>Perform full accessibility evaluation and update.</li>
+                </ul>
                 <p>
                     Thank you for your understanding and patience.
                 </p>

@@ -172,7 +172,7 @@ const toOptions: { month: 'short', year: 'numeric' } = {
         <template v-slot:accomplishments>
             <ul>
                 <li>Decoupled reporting from the vendor product, as well as added flexibility to support other systems, 
-                    into a separately hosted service called the <Term reference="s3-rs" acronym="S3-RS" 
+                    into a separately hosted service called the <Term reference="s3rs" acronym="S3-RS" 
                     value="Shared System Service Reporting Service"></Term>.</li>
             </ul>
         </template>
