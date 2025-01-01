@@ -58,19 +58,19 @@ html body {
     background-image: url('/assets/BuffaloPlaidGrey.svg');
 }
 
-html:not([data-bs-theme='dark']) body div.overlay {
-    -webkit-animation: colourIn 2s;
+html body div.overlay {
+    -webkit-animation: darkIn 2s;
     /* Chrome, Safari, Opera */
-    animation: colourIn 2s;
-    opacity: 1;
+    animation: darkIn 2s;
+    opacity: 0;
 }
 
-html body div.overlay {
-    -webkit-animation: colourOut 2s;
+html:not([data-bs-theme='dark']) body div.overlay {
+    -webkit-animation: darkOut 2s;
     /* Chrome, Safari, Opera */
-    animation: colourOut 2s;
+    animation: darkOut 2s;
     background-image: url('/assets/BuffaloPlaidRed.svg');
-    opacity: 0;
+    opacity: 1;
     position: fixed;
     left: 0;
     top: 0;
@@ -80,7 +80,7 @@ html body div.overlay {
 }
 
 /* Chrome, Safari, Opera */
-@-webkit-keyframes colourIn {
+@-webkit-keyframes darkOut {
     from {
         opacity: 0;
     }
@@ -91,7 +91,7 @@ html body div.overlay {
 }
 
 /* Standard syntax */
-@keyframes colourIn {
+@keyframes darkOut {
     from {
         opacity: 0;
     }
@@ -102,7 +102,7 @@ html body div.overlay {
 }
 
 /* Chrome, Safari, Opera */
-@-webkit-keyframes colourOut {
+@-webkit-keyframes darkIn {
     from {
         opacity: 1;
     }
@@ -113,7 +113,7 @@ html body div.overlay {
 }
 
 /* Standard syntax */
-@keyframes colourOut {
+@keyframes darkIn {
     from {
         opacity: 1;
     }
