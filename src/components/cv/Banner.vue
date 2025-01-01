@@ -13,7 +13,6 @@
                 </p>
                 <ul>
                     <li>Expand menu label text responsively on wider screens.</li>
-                    <li>Initialize on dark-mode pattern and fade into colour.</li>
                     <li>Perform full accessibility evaluation and update.</li>
                 </ul>
                 <p>
