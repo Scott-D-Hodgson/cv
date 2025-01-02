@@ -19,12 +19,12 @@ onMounted(() => {
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 v-if="courseModal.course.value" class="modal-title">
+                    <h2 v-if="courseModal.course.value" class="modal-title">
                         <template v-if="!courseModal.course.value.value.includes('<abbr ')">
                             {{ courseModal.course.value.value }}
                         </template>
                         <span v-else v-html="courseModal.course.value.value"></span>
-                    </h5>
+                    </h2>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
