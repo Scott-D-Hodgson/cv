@@ -201,33 +201,33 @@ const scroll = (selector: string) => {
     <div class="btn-group-vertical border rounded mb-2" :class="classes">
         <ScrollToTop></ScrollToTop>
         <button class="btn" title="Scroll to quotation" @click="buttonClick('FlavourText')">
-            <span class="fad fa-fw fa-quotes" :class="classes"></span>
+            <span class="fad fa-fw fa-quotes" :class="classes" aria-hidden="true"></span>
         </button>
         <button class="btn" title="Scroll to technologies" @click="buttonClick('Technologies')">
-            <span class="fad fa-fw fa-code" :class="classes"></span>
+            <span class="fad fa-fw fa-code" :class="classes" aria-hidden="true"></span>
         </button>
         <button class="btn" title="Scroll to employment" @click="buttonClick('Employment')">
-            <span class="fad fa-fw fa-id-badge" :class="classes"></span>
+            <span class="fad fa-fw fa-id-badge" :class="classes" aria-hidden="true"></span>
         </button>
         <template v-for="(position, index) in positions">
             <button v-if="expanded === 'employment'" class="btn btn-sm pt-0 pb-0" :class="subclasses" :title="position.title" @click="positionClick(index)">
-                <span :class="`fad fa-${String.fromCharCode(index + 97)}`"></span>
+                <span :class="`fad fa-${String.fromCharCode(index + 97)}`" aria-hidden="true"></span>
             </button>
         </template>
         <button class="btn" title="Scroll to education" @click="buttonClick('Education')">
-            <span class="fad fa-fw fa-graduation-cap" :class="classes"></span>
+            <span class="fad fa-fw fa-graduation-cap" :class="classes" aria-hidden="true"></span>
         </button>
         <template v-for="(training, index) in trainings">
             <button v-if="expanded === 'education'" class="btn btn-sm pt-0 pb-0" :class="subclasses" :title="training.title" @click="trainingClick(index)">
-                <span :class="`fad fa-${String.fromCharCode(index + 97)}`"></span>
+                <span :class="`fad fa-${String.fromCharCode(index + 97)}`" aria-hidden="true"></span>
             </button>
         </template>
         <button class="btn" title="Scroll to systems" @click="buttonClick('Systems')">
-            <span class="fad fa-fw fa-computer" :class="classes"></span>
+            <span class="fad fa-fw fa-computer" :class="classes" aria-hidden="true"></span>
         </button>
         <template v-for="(system, index) in systems">
             <button v-if="expanded === 'systems'" class="btn btn-sm pt-0 pb-0" :class="subclasses" :title="system.title" @click="systemClick(index)">
-                <span :class="`fad fa-${String.fromCharCode(index + 97)}`"></span>
+                <span :class="`fad fa-${String.fromCharCode(index + 97)}`" aria-hidden="true"></span>
             </button>
         </template>
         <ScrollToBottom></ScrollToBottom>

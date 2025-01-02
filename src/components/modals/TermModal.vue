@@ -1,9 +1,15 @@
 <script setup lang="ts">
 import { useTermModal } from '../../composables/useTermModal';
-import { getCurrentInstance, onMounted, ref } from 'vue';
+import { computed, getCurrentInstance, onMounted, ref } from 'vue';
 
 const termModal = useTermModal();
 const id = ref(getCurrentInstance()?.uid);
+const heading = computed((): string => {
+    if (termModal.term.value) {
+        return termModal.term.value.value;
+    };
+    return 'Placeholder';
+});
 
 onMounted(() => {
     let selector = `Modal${id.value}`;
@@ -19,12 +25,12 @@ onMounted(() => {
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">
-                        {{ termModal.term.value?.value }}
+                    <h2 class="modal-title">
+                        {{ heading }}
                         <template v-if="termModal.term.value?.acronym">
                             ({{ termModal.term.value?.acronym }})
                         </template>
-                    </h5>
+                    </h2>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">

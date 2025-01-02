@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import Banner from './cv/Banner.vue';
+import CourseModal from './../components/modals/CourseModal.vue';
+import TermModal from './../components/modals/TermModal.vue';
 import Education from './cv/Education.vue';
 import Employment from './cv/Employment.vue';
 import FlavourText from './cv/FlavourText.vue';
@@ -9,9 +10,10 @@ import Technologies from './cv/Technologies.vue';
 </script>
 
 <template>
-    <div>
+    <main>
         <Header></Header>
-        <Banner></Banner>
+        <CourseModal></CourseModal>
+        <TermModal></TermModal>
         <FlavourText></FlavourText>
         <hr/>
         <Technologies></Technologies>
@@ -19,7 +21,7 @@ import Technologies from './cv/Technologies.vue';
         <Employment></Employment>
         <Education></Education>
         <Systems></Systems>
-    </div>
+    </main>
 </template>
 
 <style scoped>

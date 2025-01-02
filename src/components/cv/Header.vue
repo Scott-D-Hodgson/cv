@@ -20,28 +20,28 @@ const highlight = ref(computed(() => {
         <div class="d-none d-lg-inline">
             <div class="flex-container">
                 <div class="flex-grow-1 text-center">
-                    <a href="tel:+1 613-864-2475"><span class="fad fa-phone"></span>(613) 864-2475</a>
+                    <a href="tel:+1 613-864-2475"><span class="fad fa-phone" aria-hidden="true"></span>(613) 864-2475</a>
                 </div>
                 <div class="flex-grow-1 text-center">
-                    <a href="mailto:534448+cv@gmail.com"><span class="fad fa-envelope"></span>534448+cv@gmail.com</a>
+                    <a href="mailto:534448+cv@gmail.com"><span class="fad fa-envelope" aria-hidden="true"></span>534448+cv@gmail.com</a>
                 </div>
                 <div class="flex-grow-1 text-center">
-                    <a href="https://iamscott.ca"><span class="fad fa-globe-pointer"></span>iamscott.ca</a>
+                    <a href="https://iamscott.ca"><span class="fad fa-globe-pointer" aria-hidden="true"></span>iamscott.ca</a>
                 </div>
                 <div class="flex-grow-1 text-center">
-                    <a href="https://www.google.ca/maps/place/Orl%C3%A9ans,+Ottawa,+ON/"><span class="fad fa-home"></span>Orleans, Ontario</a>
+                    <a href="https://www.google.ca/maps/place/Orl%C3%A9ans,+Ottawa,+ON/"><span class="fad fa-home" aria-hidden="true"></span>Orleans, Ontario</a>
                 </div>
                 <div class="flex-grow-1 text-center">
-                    <a href="https://iamscott.ca/documents/ScottDHodgson.pdf" download="ScottDHodgson.pdf"><span class="fad fa-file-pdf"></span>Download <abbr title="Curriculum Vitae">CV</abbr></a>
+                    <a href="https://iamscott.ca/documents/ScottDHodgson.pdf" download="ScottDHodgson.pdf" aria-label="Downloads a PDF version of this Cirriculum Vitae"><span class="fad fa-file-pdf" aria-hidden="true"></span>Download <abbr title="Curriculum Vitae">CV</abbr></a>
                 </div>
             </div>
         </div>
         <div class="d-inline d-lg-none">
-            <a href="tel:+1 613-864-2475"><span class="fad fa-phone"></span>(613) 864-2475</a><br/>
-            <a href="mailto:534448+cv@gmail.com"><span class="fad fa-envelope"></span>534448+cv@gmail.com</a><br/>
-            <a href="https://iamscott.ca"><span class="fad fa-globe-pointer"></span>iamscott.ca</a><br/>
-            <a href="https://www.google.ca/maps/place/Orl%C3%A9ans,+Ottawa,+ON/"><span class="fad fa-home"></span>Orleans, Ontario</a><br/>
-            <a href="https://iamscott.ca/documents/ScottDHodgson.pdf" download="ScottDHodgson.pdf"><span class="fad fa-file-pdf"></span>Download <abbr title="Curriculum Vitae">CV</abbr></a>
+            <a href="tel:+1 613-864-2475"><span class="fad fa-phone" aria-hidden="true"></span>(613) 864-2475</a><br/>
+            <a href="mailto:534448+cv@gmail.com"><span class="fad fa-envelope" aria-hidden="true"></span>534448+cv@gmail.com</a><br/>
+            <a href="https://iamscott.ca"><span class="fad fa-globe-pointer" aria-hidden="true"></span>iamscott.ca</a><br/>
+            <a href="https://www.google.ca/maps/place/Orl%C3%A9ans,+Ottawa,+ON/"><span class="fad fa-home" aria-hidden="true"></span>Orleans, Ontario</a><br/>
+            <a href="https://iamscott.ca/documents/ScottDHodgson.pdf" download="ScottDHodgson.pdf" aria-label="Downloads a PDF version of this Cirriculum Vitae"><span class="fad fa-file-pdf" aria-hidden="true"></span>Download <abbr title="Curriculum Vitae">CV</abbr></a>
         </div>
     </div>
 </template>
