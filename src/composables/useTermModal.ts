@@ -13,8 +13,11 @@ const terms = useTerms();
 const element = ref<HTMLElement | null>(null);
 const openState = ref<boolean>(false);
 const activeTerm = ref<ITermWithContent | null>(null);
+const modeState = ref<'definition' | 'experience'>('definition');
 
 export function useTermModal() {
+
+    const mode = () => modeState;
 
     const term = computed(() => {
         return activeTerm.value;
@@ -29,6 +32,7 @@ export function useTermModal() {
 
     const show = async (value: ITerm) => {
         if (element.value) {
+            modeState.value = 'definition';
             let modal = new Modal(element.value);
             if (openState.value === true) {
                 modal.hide();
@@ -48,6 +52,7 @@ export function useTermModal() {
 
     return {
         bind, 
+        mode,
         show,
         term
     };

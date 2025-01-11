@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import { useDarkMode } from '../../composables/useDarkMode';
+import { useDurations } from '../../composables/useDurations';
 import TermList from './TermList.vue';
+import { onMounted } from 'vue';
 
 export interface Props {
     id: string;
@@ -20,6 +22,20 @@ export interface Props {
 
 const props = defineProps<Props>();
 const darkMode = useDarkMode();
+const durations = useDurations();
+
+onMounted(() => {
+    props.technologies?.forEach((technology) => {
+        if (technology.from && technology.to) {
+            durations.set({
+                reference: technology.reference,
+                system: props.name,
+                from: technology.from,
+                to: technology.to
+            });
+        };
+    });
+});
 </script>
 
 <template>
