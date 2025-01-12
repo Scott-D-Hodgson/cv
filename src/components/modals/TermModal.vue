@@ -25,6 +25,9 @@ onMounted(() => {
 });
 
 onUpdated(() => {
+    if (termModal.mode().value === 'basic') {
+        return;
+    };
     if (Chart.getChart('term-modal-chart')) {
         Chart.getChart('term-modal-chart')?.destroy();
     };
@@ -56,7 +59,6 @@ onUpdated(() => {
                         label: termModal.term.value?.value,
                         data: dataset,
                         borderColor: darkMode.isOn() ? '#f8f9fa' : 'crimson',
-                        //backgroundColor: "#000000",
                         borderWidth: 1,
                         fill: false,
                         tension: 0,
@@ -87,10 +89,10 @@ onUpdated(() => {
                 </div>
                 <div class="modal-body">
                     <canvas v-if="termModal.mode().value === 'experience'" id="term-modal-chart"></canvas>
-                    <p v-if="termModal.mode().value === 'definition' && termModal.term?.value?.content" class="mb-0" v-html="termModal.term.value.content"></p>
+                    <p v-if="(termModal.mode().value === 'definition' || termModal.mode().value === 'basic') && termModal.term?.value?.content" class="mb-0" v-html="termModal.term.value.content"></p>
                 </div>
                 <div class="modal-footer">
-                    <div class="btn-group float-start">
+                    <div v-if="termModal.mode().value !== 'basic'" class="btn-group">
                         <button 
                             type="button" 
                             class="btn btn-secondary" 
