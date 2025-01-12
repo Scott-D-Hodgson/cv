@@ -20,7 +20,7 @@ const terms = ref<ITerm[]>([]);
 
 export function useDurations() {
 
-    const set = async (duration: 
+    const set = (duration: 
         { 
             reference: string,
             system: string,
@@ -51,6 +51,16 @@ export function useDurations() {
         };
         dur.from = duration.from;
         dur.to = duration.to;
+    };
+
+    const has = (reference: string) => {
+        let term = terms.value.find(term => {
+            return term.ref === reference;
+        }); 
+        if (term) {
+            return true;
+        };
+        return false;
     };
 
     const labelSet = (options: {
@@ -149,6 +159,7 @@ export function useDurations() {
 
     return {
         set,
+        has,
         dataSet,
         labelSet
     };

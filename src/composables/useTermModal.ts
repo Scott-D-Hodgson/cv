@@ -1,4 +1,5 @@
 import { ITerm } from '../components/layout/Term.vue';
+import { useDurations } from './useDurations';
 import { useTerms } from './useTerms';
 import dompurify from 'dompurify';
 import { marked } from 'marked';
@@ -10,10 +11,11 @@ export interface ITermWithContent extends ITerm {
 };
 
 const terms = useTerms();
+const durations = useDurations();
 const element = ref<HTMLElement | null>(null);
 const openState = ref<boolean>(false);
 const activeTerm = ref<ITermWithContent | null>(null);
-const modeState = ref<'definition' | 'experience'>('definition');
+const modeState = ref<'basic' | 'definition' | 'experience'>('definition');
 
 export function useTermModal() {
 
@@ -32,7 +34,11 @@ export function useTermModal() {
 
     const show = async (value: ITerm) => {
         if (element.value) {
-            modeState.value = 'definition';
+            if (durations.has(value.reference)) {
+                modeState.value = 'definition';
+            } else {
+                modeState.value = 'basic';
+            };
             let modal = new Modal(element.value);
             if (openState.value === true) {
                 modal.hide();
